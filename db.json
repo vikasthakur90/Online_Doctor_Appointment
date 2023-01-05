@@ -1,0 +1,42 @@
+{
+  "doctor": [
+    {
+      "id": 1,
+      "docName": "Vikas Thakur",
+      "docEmail": "vikasthakur.90900@gmail.com",
+      "docGender": "M",
+      "docDob": "24/07/2000",
+      "specialization": "Neurosurgeon",
+      "docPhone": "7828889875",
+      "docAddress": "Dewas",
+      "docImage": "https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg"
+    }
+  ],
+  "patient": [
+    {
+      "id": 1,
+      "patientName": "Swagat",
+      "patientEmail": "swiggy.90900@gmail.com",
+      "patientPhone": "1234567890",
+      "patientAddress": "Indore",
+      "patientDob": "1/01/2000",
+      "patientGender": "M",
+      "patientAge": 23,
+      "patientImage": "https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg"
+    },
+    {
+      "id": 2,
+      "patientName": "Swagat",
+      "patientEmail": "swiggy.90900@gmail.com",
+      "patientPhone": "1234567890",
+      "patientAddress": "Indore",
+      "patientDob": "1/01/2000",
+      "patientGender": "M",
+      "patientAge": 23,
+      "patientImage": "https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
