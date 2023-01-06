@@ -1,0 +1,25 @@
+<div>
+    <form>
+        <div>
+            <mat-form-field class="custom-form-field">
+                <mat-label>symptoms/Disease</mat-label>
+                <input placeholder="enter symptoms">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="custom-form-field">
+                <mat-label>date for Appointment</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="custom-form-field">
+                <mat-label>Mobile No</mat-label>
+                <input placeholder="enter phone number">
+            </mat-form-field>
+        </div>
+        <button routerLink="">Book</button>
+    </form>
+</div>
