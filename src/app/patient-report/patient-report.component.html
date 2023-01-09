@@ -1,0 +1,72 @@
+<div style="display: flex;">
+
+<mat-card class="example-card">
+   
+    <img mat-card-image src="{{patient.patientImage}}" style="height: 300px;" alt="Photo of a Shiba Inu">
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      
+      <h1>{{ patient.patientName }}</h1>
+      <h3><b>Contact Information </b></h3>
+      <p >Email : {{ patient.patientEmail }}</p>
+      <p>Phone No: {{ patient.patientPhone }}</p>
+      
+    </mat-card-content>
+    <mat-card-actions>
+      
+      <button mat-raised-button color="primary" (click)="checked()">Checked</button>
+    </mat-card-actions>
+  </mat-card>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div>
+  <mat-card class="example-card" style="width: 1000px;height: fit-content;">
+    <mat-card-header>
+      
+      <mat-card-title>Symptons</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content><br>
+      <h5>High Fever<br>Cough<br>Cold</h5>
+    </mat-card-content>
+    <mat-card-actions><br>
+      <button mat-raised-button color="primary" (click)="openDialog()">Give Prescription</button>
+      
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="example-card" style="width: 1000px;height: fit-content;margin-top: 20px;">
+    <mat-card-content>
+        <h3><b>Blood Type:</b>   AB+</h3>
+        <h3><b>Allergies:</b>   Milk</h3>
+        <h3><b>Disease:</b>   Diabities</h3>
+        <h3><b>Last Visit:</b>   6/01/2023</h3>
+    </mat-card-content>
+   
+  </mat-card>
+  <mat-card class="example-card" style="width: 1000px;height: fit-content;margin-top: 20px;">
+    <mat-card-content>
+        <button mat-raised-button color="primary">Delete From History</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button mat-raised-button color="primary">Add a Note</button>
+        
+    </mat-card-content>
+   
+  </mat-card>
+</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <mat-card class="example-card" style="width: 1000px;">
+   <mat-card-header>
+    <mat-card-title>Other Information</mat-card-title><br>
+   </mat-card-header>
+   <mat-card-content><br>
+    <h3><b>Patient Id:  </b>{{patient.id}}</h3>
+    <h3><b>Address : </b>{{ patient.patientAddress }}</h3>
+    <h3><b>Patient DOB: </b>{{patient.patientDob}}</h3>
+    <h3><b>Patient Gender: </b>{{patient.patientGender}}</h3>
+    <mat-divider></mat-divider>
+    <h3><b>Older Prescription</b></h3>
+    <p>No Availabe Prescription</p>
+    <mat-divider></mat-divider>
+    <h3><b>Note to Remember</b></h3>
+    <p>No available Note</p>
+   </mat-card-content>
+  </mat-card>
+
+</div>

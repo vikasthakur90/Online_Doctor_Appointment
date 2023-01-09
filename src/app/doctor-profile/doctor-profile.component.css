@@ -1,0 +1,38 @@
+
+
+.example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+  /* .step{
+    background-image: url(https://img.freepik.com/free-vector/realistic-galaxy-background_52683-12122.jpg?w=2000);
+    height: 550px;
+    background-size: cover; }*/
+
+
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+.form{
+    text-align: center;
+    border-radius: 2px;
+  margin-top: 5px;
+    background-color: #ffffff;
+    width: 510px;
+    height: 480px;
+    margin-left: 320px;
+   
+   
+
+}
+.step{
+	background-image: url("https://t4.ftcdn.net/jpg/00/64/27/09/360_F_64270970_4LMrGzx6DuMDse9fKaMxNRKSUJRSkCnf.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 25px;
+}
