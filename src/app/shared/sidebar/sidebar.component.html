@@ -3,18 +3,19 @@
         <div class="header">
             <h2>{{doc.docName}}</h2>
             <h4>{{doc.docEmail}}</h4>
-        </div>
+        </div> 
         <img src="{{doc.docImage}}" alt="Soufiane FADIL">
     </div>
 
     <mat-divider></mat-divider>
 
-    <h2 matSubheader>Pages</h2>
+    
 
-    <a mat-list-item routerLinkActive="list-item-active">Dashboard</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="activepatient">Active Patients</a>
-    <a mat-list-item routerLinkActive="list-item-active">Articles</a>
-
+    <a mat-list-item routerLinkActive="list-item-active"><mat-icon matPrefix>home</mat-icon>Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="appointment"><mat-icon class="material-icons" matPrefix>list</mat-icon>Patients List</a>
+    <a mat-list-item routerLinkActive="list-item-active" [routerLink]="[{ outlets: { left: ['activepatient'] } }]"><mat-icon class="material-icons" matPrefix>pending_actions</mat-icon>Patient Appointement</a>
+    <a mat-list-item routerLinkActive="list-item-active"><mat-icon class="material-icons" matPrefix>logout</mat-icon>Logout</a>
+   
     <mat-divider></mat-divider>
 
    

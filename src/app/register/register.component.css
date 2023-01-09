@@ -1,0 +1,30 @@
+.example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+  /* .step{
+    background-image: url(https://img.freepik.com/free-vector/realistic-galaxy-background_52683-12122.jpg?w=2000);
+    height: 550px;
+    background-size: cover; }*/
+
+
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+.form{
+    text-align: center;
+    border-radius: 2px;
+  
+    background-color: #ffffff;
+    width: 800px;
+    height: 480px;
+    margin-left: 200px;
+   
+   
+
+}
