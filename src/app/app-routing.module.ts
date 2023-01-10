@@ -12,9 +12,12 @@ import { PatientReportComponent } from './patient-report/patient-report.componen
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-  {path:"activepatient",component:ActivePatientsComponent,outlet:'left'},
-  {path:"doctor-dash",component:DoctorDashboardComponent},
-  {path:"doctor-dash/appointment",component:AppointmentComponent,outlet:'left'},
+  
+  {path:"doctor-dash",component:DoctorDashboardComponent,children:[
+    {path:"appointment",component:AppointmentComponent},
+    {path:"activepatient",component:ActivePatientsComponent}
+  ]},
+  // {path:"appointment",component:AppointmentComponent,outlet:'left'},
   {path:"report/:id",component:PatientReportComponent,outlet:'left'},
   {path:"",component:HomepageComponent},
   {path:"bothcard",component:BothcardComponent},
