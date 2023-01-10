@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/auth.service';
 import { DoctorData } from 'src/app/model';
 
 @Component({
@@ -11,7 +12,7 @@ import { DoctorData } from 'src/app/model';
 })
 export class SidebarComponent implements OnInit{
   url:string = "http://localhost:3000";
-  constructor(private http:HttpClient,private route:Router) { }
+  constructor(private http:HttpClient,private route:Router,private auth:AuthService) { }
   doc:DoctorData={
     id: 0,
     docName: '',
@@ -32,5 +33,7 @@ export class SidebarComponent implements OnInit{
   DocGet():Observable<DoctorData>{
     return this.http.get<DoctorData>(this.url + "/doctor/1");
   }
-
+ logout(){
+ this.auth.logout();
+ }
 }
