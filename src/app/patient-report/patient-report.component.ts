@@ -1,17 +1,27 @@
 import { HttpClient } from '@angular/common/http';
-import { Component,OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component,Inject,OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AppointmentComponent } from '../appointment/appointment.component';
 import { pappointment, PatientData, prescription } from '../model';
 import { ServiceService } from '../service.service';
 
+export interface DialogData {
+  
+  patientEmail: string;
+}
+export interface NoteData {
+  note:string;
+  patientEmail: string;
+}
 @Component({
   selector: 'app-patient-report',
   templateUrl: './patient-report.component.html',
   styleUrls: ['./patient-report.component.css']
 })
+
 export class PatientReportComponent implements OnInit {
   patientName!:string;
   patient:pappointment={
@@ -46,6 +56,18 @@ export class PatientReportComponent implements OnInit {
     });
 
    }
+   note1!:string;
+   note(){
+    const dialogRef = this.dialog.open(Note,{
+      data: {patientEmail: this.patient.patientEmail},
+    },);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.note1 = result;
+    });
+  }
+   
   checked(){
 
   }}
@@ -60,7 +82,7 @@ export class PatientReportComponent implements OnInit {
   
   export class Prescription {
   
-    constructor(public dialog: MatDialog,private http:HttpClient) {}
+    constructor(public dialog: MatDialog,private http:HttpClient,public dialogRef: MatDialogRef<Note>) {}
     dclose(){
       this.dialog.closeAll();
     }
@@ -68,4 +90,30 @@ export class PatientReportComponent implements OnInit {
     savePrescription(){
      this.http.post("http://localhost:3000/prescription",this.prescription);
     }
+  }
+  
+  @Component({
+    
+    selector: 'Note',
+  
+    templateUrl: './note.html',
+  
+  })
+  
+  export class Note {
+    constructor(
+      public dialogRef: MatDialogRef<Note>,
+      @Inject(MAT_DIALOG_DATA) public data: DialogData,private http:HttpClient
+    ) {}
+   note1!:NoteData;
+    onNoClick(): void {
+      this.dialogRef.close();
+      
+    }
+    
+    submit(){
+      this.note1.patientEmail=this.data.patientEmail;
+      this.http.post<NoteData>("http://localhost:3000/note",this.note1).subscribe();
+    }
+   
   }

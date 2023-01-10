@@ -15,10 +15,11 @@ const routes: Routes = [
   
   {path:"doctor-dash",component:DoctorDashboardComponent,children:[
     {path:"appointment",component:AppointmentComponent},
-    {path:"activepatient",component:ActivePatientsComponent}
+    {path:"activepatient",component:ActivePatientsComponent},
+    {path:"report/:id",component:PatientReportComponent}
   ]},
-  // {path:"appointment",component:AppointmentComponent,outlet:'left'},
-  {path:"report/:id",component:PatientReportComponent,outlet:'left'},
+  
+  // {path:"report/:id",component:PatientReportComponent},
   {path:"",component:HomepageComponent},
   {path:"bothcard",component:BothcardComponent},
   {path:"login", component:LoginComponent},

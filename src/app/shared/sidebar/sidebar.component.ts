@@ -25,14 +25,27 @@ export class SidebarComponent implements OnInit{
     docImage: ''
   };
   ngOnInit() {
-   this.DocGet().subscribe(res=>{
-    this.doc=res;
+  //  this.DocGet().subscribe(res=>{
+  //   this.doc=res;
     
-   })
+  //  })
+  this.email = localStorage.getItem('email');
+  this.http.get<any>("http://localhost:3000/doctor").subscribe(res=>{
+      const user = res.find((a:any)=>{
+        return a.docEmail === this.email; 
+      });
+      this.doc=user;
+})
   }
-  DocGet():Observable<DoctorData>{
-    return this.http.get<DoctorData>(this.url + "/doctor/1");
-  }
+  email!:string|null;
+//   DocGet():Observable<any>{
+//     this.email = localStorage.getItem('email');
+//     this.http.get<any>("http://localhost:3000/doctor").subscribe(res=>{
+//         const user = res.find((a:any)=>{
+//           return a.docEmail === this.email; 
+//         });
+//   })
+// }
  logout(){
  this.auth.logout();
  }

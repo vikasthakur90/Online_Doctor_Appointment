@@ -29,8 +29,9 @@ export class AuthService {
   login(email : string, password : string){
     this.fireauth.signInWithEmailAndPassword(email,password).then( () => {
       localStorage.setItem('token','true');
-    
+      localStorage.setItem('email',email);
       this.router.navigate(['doctor-dash']);
+
     }, err => {
       alert(err.message);
       this.router.navigate(['/login']);
