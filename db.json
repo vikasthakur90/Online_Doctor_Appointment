@@ -20,14 +20,14 @@
       "specialization": "Neurosergeon",
       "docPhone": "7828889875",
       "docAddress": "Dewas",
-      "docImage": "C:\\fakepath\\Screenshot (3).png",
+      "docImage": "https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*",
       "id": 2
     }
   ],
   "appointment": [
     {
       "id": 1,
-      "doa": "6/1/2023",
+      "doa": "10/1/2023",
       "patientName": "Swagat",
       "patientEmail": "swiggy.90900@gmail.com",
       "patientPhone": "1234567890",
@@ -87,6 +87,7 @@
     }
   ],
   "prescription": [],
+  "note":[],
   "profile": {
     "name": "typicode"
   }

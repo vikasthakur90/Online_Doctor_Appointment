@@ -10,7 +10,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ActivePatientsComponent } from './active-patients/active-patients.component';
 import { AppointmentComponent } from './appointment/appointment.component';
-import { PatientReportComponent } from './patient-report/patient-report.component';
+import { Note, PatientReportComponent } from './patient-report/patient-report.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -44,7 +44,7 @@ import { DoctorProfileComponent } from './doctor-profile/doctor-profile.componen
     LoginComponent,
     RegisterComponent,
     LoginDoctorComponent,
-    DoctorProfileComponent
+    DoctorProfileComponent,Note
   ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule,NgbCarouselModule,

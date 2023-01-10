@@ -51,7 +51,7 @@ export class AppointmentComponent {
   report(p:pappointment){
   //this.cs.sendClickEvent(p);
   console.log(p.id);
-  this.router.navigate(['report/'+p.id]);
+  this.router.navigate(['doctor-dash/report/'+p.id]);
    }
  
 }
