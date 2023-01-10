@@ -1,0 +1,25 @@
+:host .mat-icon {
+    vertical-align: middle;
+    margin-right: 20px;
+}
+:host .profile-card {
+    text-align: center;
+    padding: 0 20px 20px 20px;
+}
+:host .profile-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.profile-card :hover{
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(190, 242, 255, 0.75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(190, 242, 255, 0.75);
+    box-shadow: 0px 0px 15px 5px rgba(190, 242, 255, 0.75);
+}
+a:hover{
+        -webkit-box-shadow: 0px 0px 15px 5px rgba(190, 242, 255, 0.75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(190, 242, 255, 0.75);
+    box-shadow: 0px 0px 15px 5px rgba(190, 242, 255, 0.75); 
+     border: solid lightblue;
+}

@@ -1,0 +1,44 @@
+<div>
+    <form [formGroup]="appointmentform" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field class="custom-form-field">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="enter name" formControlName="patientName" class="form-input-field">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="custom-form-field">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="enter Email" formControlName="patientEmail" class=" form-input-field">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="custom-form-field">
+                <mat-label>symptoms/Disease</mat-label>
+                <input matInput placeholder="enter symptoms" formControlName="Disease" class="form-input-field">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="custom-form-field">
+                <mat-label>Doctor name</mat-label>
+                <input matInput formControlName="docName" [(ngModel)]="doctorName" class="form-input-field" readonly />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="custom-form-field">
+                <mat-label>Doctor Email</mat-label>
+                <input matInput formControlName="docEmail" [(ngModel)]="doctorEmail" class="form-input-field" readonly>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="custom-form-field">
+                <mat-label>date for Appointment</mat-label>
+                <input matInput [matDatepicker]="picker" class="form-input-field" formControlName="doa">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <button mat-raised-button>Book</button>
+    </form>
+</div>

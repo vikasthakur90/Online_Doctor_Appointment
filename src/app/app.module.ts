@@ -3,23 +3,65 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from './material-module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PatientModuleComponent } from './patient-module/patient-module.component';
+import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ActivePatientsComponent } from './active-patients/active-patients.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { PatientReportComponent } from './patient-report/patient-report.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HomepageComponent } from './homepage/homepage.component';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './shared/footer/footer.component';
+import { BothcardComponent } from './bothcard/bothcard.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import{AngularFireModule} from '@angular/fire/compat';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
+import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
+import { PatientDashComponent } from './patient-dash/patient-dash.component';
+import { PatientSidebarComponent } from './patient-sidebar/patient-sidebar.component';
+import { PatientBookAppointmentComponent } from './patient-book-appointment/patient-book-appointment.component';
+import { AppointmentBookFormComponent } from './appointment-book-form/appointment-book-form.component';
+import { PatientAppointmentHistoryComponent } from './patient-appointment-history/patient-appointment-history.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    PatientModuleComponent,
-    HomeComponent,
-    AppointmentComponent
+    DoctorDashboardComponent,
+    HeaderComponent,
+    SidebarComponent,
+    ActivePatientsComponent,
+    AppointmentComponent,
+    PatientReportComponent,
+    HomepageComponent,
+    FooterComponent,
+    BothcardComponent,
+    LoginComponent,
+    RegisterComponent,
+    LoginDoctorComponent,
+    DoctorProfileComponent,
+    PatientDashComponent,
+    PatientSidebarComponent,
+    PatientBookAppointmentComponent,
+    AppointmentBookFormComponent,
+    PatientAppointmentHistoryComponent,
+    PatientProfileComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule
+    BrowserModule,FormsModule,ReactiveFormsModule,NgbCarouselModule,
+    AppRoutingModule,MaterialModule, BrowserAnimationsModule,provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),AngularFireModule.initializeApp(environment.firebase),HttpClientModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAuth(() => getAuth()),
   ],
   providers: [],
   bootstrap: [AppComponent]

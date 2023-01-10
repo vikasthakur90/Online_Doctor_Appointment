@@ -1,24 +1,146 @@
 {
-  "posts": [
+  "doctor": [
     {
       "id": 1,
-      "name": "Dr. Aditi Jain",
-      "specialization": "typicode",
-      "Email": "aditi435jain@gmail.com",
-      "sex": "Female",
-      "Date of Birth": "9/1/2000",
-      "Mobile No": "9131456789",
-      "Address": "Indore",
-      "profile Pic": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "docName": "Vikas Thakur",
+      "docEmail": "vikasthakur.90900@gmail.com",
+      "docGender": "M",
+      "docDob": "24/07/2000",
+      "specialization": "Neurosurgeon",
+      "docPhone": "7828889875",
+      "docAddress": "Dewas",
+      "docImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxXCQel_aODMeATFFpdaMDnJ1agzwT63pMsQ&usqp=CAU"
+    },
+    {
+      "docName": "Vikas Thakur",
+      "docEmail": "vikasthaku.90900@gmail.com",
+      "docPassword": "Vikas@123",
+      "docGender": "M",
+      "docDob": "2000-07-23T18:30:00.000Z",
+      "specialization": "Neurosergeon",
+      "docPhone": "7828889875",
+      "docAddress": "Dewas",
+      "docImage": "C:\\fakepath\\Screenshot (3).png",
+      "id": 2
+    },
+    {
+      "docName": "aditii",
+      "docEmail": "aaaa@gmail.com",
+      "docPassword": "111111",
+      "docGender": "F",
+      "docDob": "2023-01-17T18:30:00.000Z",
+      "specialization": "MD",
+      "docPhone": "1111111111",
+      "docAddress": "aaaaaaaaa",
+      "docImage": "C:\\fakepath\\MicrosoftTeams-image (8).png",
+      "id": 3
     }
   ],
-  "comments": [
+  "patientAppoint": [
+    {
+      "patientName": "aditti",
+      "patientEmail": "aditi435jain@gmail.com",
+      "doa": "2023-01-10T18:30:00.000Z",
+      "Disease": "aaaaaaaaa",
+      "docName": "",
+      "docEmail": "",
+      "id": 1
+    },
+    {
+      "patientName": "aditi",
+      "patientEmail": "aaa@gmail.com",
+      "doa": "2023-01-18T18:30:00.000Z",
+      "Disease": "fever",
+      "docName": "Vikas Thakur",
+      "docEmail": "vikasthakur.90900@gmail.com",
+      "id": 2
+    },
+    {
+      "patientName": "Aditi Jain",
+      "patientEmail": "aaa@gmail.com",
+      "doa": "2023-01-18T18:30:00.000Z",
+      "Disease": "fever",
+      "docName": "aditii",
+      "docEmail": "aaaa@gmail.com",
+      "id": 3
+    }
+  ],
+  "appointment": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "doa": "6/1/2023",
+      "patientName": "Swagat",
+      "patientEmail": "swiggy.90900@gmail.com",
+      "patientPhone": "1234567890",
+      "patientAddress": "Indore",
+      "patientDob": "1/01/2000",
+      "patientGender": "M",
+      "patientAge": 23,
+      "patientImage": "https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg"
+    },
+    {
+      "id": 2,
+      "doa": "9/1/2023",
+      "patientName": "Swagat",
+      "patientEmail": "swiggy.90900@gmail.com",
+      "patientPhone": "1234567890",
+      "patientAddress": "Indore",
+      "patientDob": "1/01/2000",
+      "patientGender": "M",
+      "patientAge": 23,
+      "patientImage": "https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg"
+    },
+    {
+      "id": 3,
+      "doa": "9/1/2023",
+      "patientName": "Abhishek",
+      "patientEmail": "abhi.90900@gmail.com",
+      "patientPhone": "1234567890",
+      "patientAddress": "Dewas",
+      "patientDob": "1/01/2000",
+      "patientGender": "M",
+      "patientAge": 23,
+      "patientImage": "https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg"
     }
   ],
+  "patient": [
+    {
+      "id": 1,
+      "patientName": "Swagat",
+      "patientEmail": "swiggy.90900@gmail.com",
+      "patientPhone": "1234567890",
+      "patientAddress": "Indore",
+      "patientDob": "1/01/2000",
+      "patientGender": "M",
+      "patientAge": 23,
+      "patientImage": "https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg"
+    },
+    {
+      "id": 2,
+      "patientName": "Swagat",
+      "patientEmail": "swiggy.90900@gmail.com",
+      "patientPhone": "1234567890",
+      "patientAddress": "Indore",
+      "patientDob": "1/01/2000",
+      "patientGender": "M",
+      "patientAge": 23,
+      "patientImage": "https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg"
+    },
+    {
+      "id": 7,
+      "patientName": "aditii",
+      "LastName": "jain",
+      "patientEmail": "aaa@gmail.com",
+      "password": "123456",
+      "patientGender": "F",
+      "patientDob": "2023-01-11T18:30:00.000Z",
+      "patientPhone": "1234567890",
+      "patientAge": "22",
+      "patientAddress": "house",
+      "patientImage": "C:\\fakepath\\MicrosoftTeams-image (8).png"
+    }
+  ],
+  "prescription": [],
   "profile": {
     "name": "typicode"
   }

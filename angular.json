@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "patient": {
+    "OnlineDoctorAppointment": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/patient",
+            "outputPath": "dist/online-doctor-appointment",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -26,7 +26,8 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -61,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "patient:build:production"
+              "browserTarget": "OnlineDoctorAppointment:build:production"
             },
             "development": {
-              "browserTarget": "patient:build:development"
+              "browserTarget": "OnlineDoctorAppointment:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "patient:build"
+            "browserTarget": "OnlineDoctorAppointment:build"
           }
         },
         "test": {
@@ -98,6 +99,6 @@
     }
   },
   "cli": {
-    "analytics": "3943b244-bfe6-4f60-8c20-a06a2aa663df"
+    "analytics": "2c4c9bc4-cbac-43a7-9b02-134f8074ed3d"
   }
 }

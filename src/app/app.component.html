@@ -1,36 +1,3 @@
-<mat-sidenav-container fullscreen>
-  <mat-sidenav #sidenav>
-    <mat-nav-list (click)="sidenav.close()">
-      <a mat-list-item routerLink="dashboard">
-        <mat-icon></mat-icon>
-        <span>dashboard</span>
-      </a>
 
-
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-toolbar color="primary">
-    <button mat-icon-button (click)="sidenav.open()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <a mat-button [matMenuTriggerFor]="dropdown">
-      About Us
-    </a>
-    <mat-menu #dropdown>
-      <button mat-raised-button color="primary" routerLink="about" routerLinkActive="Active">About Us</button>
-    </mat-menu>
-    <button mat-flat-button color="primary" routerLink="">
-      <mat-icon>home</mat-icon>
-      Home
-    </button>
-    <button mat-flat-button color="primary" routerLink="register">
-      <mat-icon>person_add</mat-icon>
-      Register
-    </button>
-    <button mat-flat-button color="primary" routerLink="login">
-      <mat-icon>account_circle</mat-icon>
-      Login
-    </button>
-  </mat-toolbar>
-  <router-outlet></router-outlet>
-</mat-sidenav-container>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

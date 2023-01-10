@@ -1,0 +1,22 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  mat-drawer {
+    width: 300px;
+  }
+  
+  mat-drawer-container {
+    height: 100%;
+  }
+  
+  mat-drawer-content {
+    padding: 20px;
+  }
+  button:hover{
+  
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(190, 191, 255, 0.75);
+-moz-box-shadow: 0px 0px 15px 5px rgba(190, 191, 255, 0.75);
+box-shadow: 0px 0px 15px 5px rgba(190, 191, 255, 0.75); 
+ }
