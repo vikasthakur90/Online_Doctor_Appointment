@@ -1,0 +1,92 @@
+<mat-divider></mat-divider>
+<br>
+<div fxLayout="row" fxLayoutAlign="space between center" fxLayoutGap="20px" class="statistics">
+    <mat-card fxFlex="23">
+        <h3 style="font-weight: bold;">New Users this month</h3>
+        <h2 style=" color: grey; ">5k
+            <div style="float: right;">
+                <mat-icon matIconSuffix style="color:lightgreen">trending_up</mat-icon>
+                <span style="color: lightgreen;">60%</span>
+            </div>
+        </h2>
+        <mat-progress-bar mode="buffer" value="60"></mat-progress-bar>
+        <p style="color:grey;font-weight: 500;">60% of the target</p>
+    </mat-card>
+    <mat-card fxFlex="23">
+        <h3 style="font-weight: bold;">  Referrals</h3>
+        <h2 style=" color: grey; ">1k
+            <div style="float: right;">
+            <mat-icon matIconSuffix style="color:lightgreen">trending_up</mat-icon>
+            <span style="color: lightgreen;">30%</span>
+            </div>
+        </h2>
+        <mat-progress-bar mode="buffer" value="30" color="warn"></mat-progress-bar>
+        <p style="color:grey;font-weight: 500;">30% of the target</p>
+    </mat-card>
+    <mat-card fxFlex="23">
+        <h3 style="font-weight: bold;">User Retention</h3>
+        <h2 style=" color: grey; ">3k
+            <div style="float: right;">
+            <mat-icon matIconSuffix style="color:lightgreen">trending_up</mat-icon>
+            <span style="color: lightgreen;">40%</span>
+            </div>
+        </h2>
+        <mat-progress-bar mode="buffer" value="40"></mat-progress-bar>
+        <p style="color:grey;font-weight: 500;">40% of the target</p>
+    </mat-card>
+    <mat-card fxFlex="23">
+        <h3 style="font-weight: bold;">  Average daily visits</h3>
+        <h2 style=" color: grey; ">7k
+            <div style="float: right;">
+            <mat-icon matIconSuffix style="color:lightgreen">trending_up</mat-icon>
+            <span style="color: lightgreen;">55%</span>
+            </div>
+        </h2>
+        <mat-progress-bar mode="buffer" value="55" color="warn"></mat-progress-bar>
+        <p style="color:grey;font-weight: 500;">55% of the target</p>
+    </mat-card>
+</div>
+<mat-divider></mat-divider>
+<br>
+<mat-card style="width:98%">
+    <apx-chart
+      [series]="linechartOptions.series"
+      [chart]="linechartOptions.chart"
+      [xaxis]="linechartOptions.xaxis"
+      [stroke]="linechartOptions.stroke"
+      [tooltip]="linechartOptions.tooltip"
+      [dataLabels]="linechartOptions.dataLabels"
+      [title]="linechartOptions.chartTitleSubtitle"></apx-chart>
+</mat-card>
+<mat-divider></mat-divider>
+<br>
+<mat-divider></mat-divider>
+<div fxLayout="row" fxLayoutAlign="space between center" fxLayoutGap="20px" class="statistics"
+style="height:360px">
+<mat-card fxFlex="50">
+    <apx-chart 
+    [series]="chartSeries" 
+    [chart]="chartDetails" 
+    [labels]="chartLabels" 
+    [title]="chartTitle" 
+    [dataLabels]="chartDataLabels"></apx-chart>
+</mat-card>
+<br>
+<mat-card fxFlex="46">
+    <div id="chart">
+        <apx-chart
+          [series]="columnchartOptions.series"
+          [chart]="columnchartOptions.chart"
+          [dataLabels]="columnchartOptions.dataLabels"
+          [plotOptions]="columnchartOptions.plotOptions"
+          [yaxis]="columnchartOptions.yaxis"
+          [legend]="columnchartOptions.legend"
+          [fill]="columnchartOptions.fill"
+          [stroke]="columnchartOptions.stroke"
+          [tooltip]="columnchartOptions.tooltip"
+          [xaxis]="columnchartOptions.xaxis"
+          [title]="columnchartOptions.chartTitle"
+        ></apx-chart>
+      </div>
+</mat-card>
+</div>

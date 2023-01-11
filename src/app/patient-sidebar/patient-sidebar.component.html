@@ -1,0 +1,23 @@
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            <h2>{{this.name}}</h2>
+            <h4>{{this.loggedinuseremail}}</h4>
+        </div>
+        <img src="{{this.image}}" alt="Soufiane FADIL">
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h2 matSubheader>Pages</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="patient-profile">profile</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="patient-appointment-history">Appointments
+        History</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="bookappointment">Book Appointment</a>
+
+    <mat-divider></mat-divider>
+
+
+
+</mat-nav-list>

@@ -27,6 +27,24 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { BillsComponent } from './bills/bills.component';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { DesignComponent } from './design/design.component';
+import { DoctorslistComponent } from './doctorslist/doctorslist.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { PatientslistComponent } from './patientslist/patientslist.component';
+import { AdminComponent } from './admin/admin.component';
+import { PatientDashComponent } from './patient-dash/patient-dash.component';
+import { PatientAppointmentHistoryComponent } from './patient-appointment-history/patient-appointment-history.component';
+import { PatientBookAppointmentComponent } from './patient-book-appointment/patient-book-appointment.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+import { PatientSidebarComponent } from './patient-sidebar/patient-sidebar.component';
+import { AppointmentBookFormComponent } from './appointment-book-form/appointment-book-form.component';
+
+
 
 
 @NgModule({
@@ -44,10 +62,10 @@ import { DoctorProfileComponent } from './doctor-profile/doctor-profile.componen
     LoginComponent,
     RegisterComponent,
     LoginDoctorComponent,
-    DoctorProfileComponent,Note
+    DoctorProfileComponent,Note,AdminDashboardComponent,BillsComponent, DesignComponent, DoctorslistComponent,FeedbackComponent, PatientslistComponent,AdminComponent, PatientDashComponent, PatientAppointmentHistoryComponent, PatientBookAppointmentComponent, PatientProfileComponent, PatientSidebarComponent, AppointmentBookFormComponent
   ],
   imports: [
-    BrowserModule,FormsModule,ReactiveFormsModule,NgbCarouselModule,
+    BrowserModule,FormsModule,ReactiveFormsModule,NgbCarouselModule,NgApexchartsModule,FlexLayoutModule,
     AppRoutingModule,MaterialModule, BrowserAnimationsModule,provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),AngularFireModule.initializeApp(environment.firebase),HttpClientModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAuth(() => getAuth()),
   ],

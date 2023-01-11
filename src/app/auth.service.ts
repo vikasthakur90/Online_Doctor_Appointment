@@ -30,6 +30,7 @@ export class AuthService {
     this.fireauth.signInWithEmailAndPassword(email,password).then( () => {
       localStorage.setItem('token','true');
       localStorage.setItem('email',email);
+      localStorage.setItem('password',password);
       this.router.navigate(['doctor-dash']);
 
     }, err => {
@@ -39,7 +40,19 @@ export class AuthService {
     )
   }
 
-  
+  PatientLogin(email: string, password: string) {
+    this.fireauth.signInWithEmailAndPassword(email, password).then(() => {
+      localStorage.setItem('token', 'true');
+      localStorage.setItem('patientEmail', email);
+      sessionStorage.setItem('pemail', email);
+
+      this.router.navigate(['/patient-dash']);
+    }, err => {
+      alert(err.message);
+      this.router.navigate(['/login']);
+    }
+    )
+  }
 
   //register 
   register( patientEmail : string, password: string) {
@@ -59,6 +72,8 @@ export class AuthService {
   logout(){
     this.fireauth.signOut().then( () => {
       localStorage.removeItem('token');
+      localStorage.removeItem('email');
+      console.log("logout");
       this.router.navigate(['/login']);
 
     }, err => {

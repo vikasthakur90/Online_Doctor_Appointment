@@ -9,9 +9,19 @@ export interface DoctorData{
     docAddress:string;
     docImage:string;
 }
+export interface Appointment {
+    id: number;
+    doa: string;
+    patientEmail: string;
+    patientName: string;
+    Disease: string;
+    docEmail: string;
+    docName: string;
+}
 export interface PatientData{
     id:number;
     patientName:string;
+    patientPassword:string;
     patientEmail:string;
     patientPhone:string;
     patientAddress:string;
@@ -19,6 +29,11 @@ export interface PatientData{
     patientGender:string;
     patientAge:number;
     patientImage:string;
+}
+export interface BillDetails{
+    id:number;
+    patientName:string;
+    amount:number;
 }
 export interface pappointment{
     id:number;

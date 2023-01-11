@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
-import { PatientData } from '../model';
+import { pappointment, PatientData } from '../model';
 
 @Component({
   selector: 'app-active-patients',
@@ -19,12 +19,15 @@ export class ActivePatientsComponent
   displayedColumns: string[] = ['id', 'patientName', 'patientEmail', 'patientPhone', 'patientGender', 'patientAddress','patientAge', 'report'];
   dataSource:any;
   patient:PatientData[] = [];
+  router: any;
   constructor(private http:HttpClient){}
   ngOnInit():void{
-    
+    let email = localStorage.getItem('email');
     this.PatientGet().subscribe(list=>{
-      this.patient = list;
-    
+    //  this.patient = list;
+      this.patient = list.filter((a:any)=>{
+        return a.docEmail === email;
+       });
       this.dataSource = new MatTableDataSource<PatientData>(this.patient);
       this.dataSource.paginator=this.paginator;
       this.dataSource.sort=this.sort;
@@ -32,13 +35,18 @@ export class ActivePatientsComponent
     
   }
   PatientGet():Observable<PatientData[]>{
-    return this.http.get<PatientData[]>(this.url + "/patient");
+    return this.http.get<PatientData[]>(this.url + "/patientHistory");
   }
 
   FilterChange(event:Event){
   const filvalue =(event.target as HTMLInputElement).value;
   this.dataSource.filter=filvalue;
   }
+  report(p:pappointment){
+    //this.cs.sendClickEvent(p);
+    console.log(p.id);
+    this.router.navigate(['doctor-dash/report/'+p.id]);
+     }
 }
 
 

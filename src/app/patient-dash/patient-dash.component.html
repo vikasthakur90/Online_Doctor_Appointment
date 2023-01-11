@@ -1,0 +1,14 @@
+<div>
+    <mat-sidenav-container fullscreen>
+        <mat-sidenav #sidenav>
+            <app-patient-sidebar></app-patient-sidebar>
+        </mat-sidenav>
+        <mat-toolbar color="primary">
+            <button mat-icon-button (click)="sidenav.open()">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-container>
+</div>

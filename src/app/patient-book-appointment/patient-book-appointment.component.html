@@ -1,0 +1,31 @@
+<div>
+    <mat-grid-list cols="4" rowHeight="300px" gutterSize="10px">
+
+        <mat-grid-tile *ngFor="let doctor of doctors">
+
+            <mat-card fxLayoutWrap="wrap" fxLayout="column" fxFlex="90%" fxLayoutGap="16px"
+                style="min-width: 300px; min-height: 200px; background-color: rgb(175, 206, 240);">
+                <mat-card-header>
+                    <mat-card-title-group>
+                        <mat-card-subtitle>{{doctor.specialization}}</mat-card-subtitle>
+                        <mat-card-title>{{ doctor.docName }}</mat-card-title>
+                        <img style="height: 70px; width: 70px; border-radius: 50%;" src={{doctor.docImage}}>
+                    </mat-card-title-group>
+                </mat-card-header>
+                <mat-card-content>
+                    <P>
+                        Email:{{doctor.docEmail}}<br>
+                        Mobile No:{{doctor.docPhone}}<br>
+                        Address:{{doctor.docAddress}}
+                    </P>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" (click)="getId(doctor)">Book
+                        Appointment</button>
+                </mat-card-actions>
+            </mat-card>
+
+        </mat-grid-tile>
+
+    </mat-grid-list>
+</div>

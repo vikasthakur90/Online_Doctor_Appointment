@@ -1,0 +1,17 @@
+#bgimg{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgyAUpqzXF2W3X7IAGC_oYcLhuDXzAiQ7k9g&usqp=CAU);
+}
+.center{
+    float: right;
+    width:50%;
+}
+.chartContainer {
+    width: 400px;
+    height: 250px;
+}
+.matcard1{
+    height: 30%;
+}
+mat-card:hover{
+    box-shadow: -5px 10px 30px 0px rgba(0, 0, 0, 0.8);
+}

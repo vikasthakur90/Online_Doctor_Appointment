@@ -1,0 +1,51 @@
+<mat-toolbar color="primary">
+    <mat-icon matIcon>supervisor_account</mat-icon>
+    <span style="width:90%">Admin Dashboard</span>
+    <div style="text-align: right;">
+      
+      <button mat-button (click)="openDialog()"><mat-icon>feedback</mat-icon>Feedbacks</button>
+        
+    <button mat-button (click)="onLogout()"><mat-icon>logout</mat-icon>Logout</button></div>
+</mat-toolbar>
+<mat-sidenav-container class = "tp-container">
+    <mat-sidenav mode = "side" opened class="sidenav">
+      <section>
+         <h2>Admin </h2>
+         <span>admin123@email.com </span>
+      </section>
+           <img src="https://image.shutterstock.com/image-vector/female-customer-service-icon-woman-260nw-426119812.jpg">
+           
+         <mat-divider></mat-divider>
+         <div style="color:grey">Pages</div>
+           <section class = "tp-section">
+            <mat-icon>dashboard</mat-icon>
+          <a routerLink="admin-dashboard">Dashboard</a>
+       </section>
+       <section class = "tp-section">
+        <mat-icon>work</mat-icon>
+          <a routerLink="doctors">Doctors-data</a>
+       </section>
+       <section class = "tp-section">
+        <mat-icon>person</mat-icon>
+          <a routerLink="patients">Patients-data</a>
+       </section>
+       <section class = "tp-section">
+         <mat-icon>assignment</mat-icon>
+           <a routerLink="bills">Bills</a>
+        </section>
+        
+       <mat-divider></mat-divider>
+       <div style="color:grey">Tools</div>
+       <section class = "tp-section">
+        <mat-icon matSuffix>help</mat-icon>
+        <a href=""> Help</a>
+     </section>
+     <section class = "tp-section">
+        <mat-icon matSuffix>admin_panel_settings</mat-icon>
+        <a href=""> Settings</a>
+     </section>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+ </mat-sidenav-container>

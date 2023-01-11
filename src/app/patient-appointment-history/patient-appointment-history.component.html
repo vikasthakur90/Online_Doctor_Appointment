@@ -1,0 +1,31 @@
+<div>
+    <mat-grid-list cols="4" rowHeight="300px" gutterSize="10px">
+
+        <mat-grid-tile *ngFor="let patient of appointments ">
+
+            <mat-card fxLayoutWrap="wrap" fxLayout="column" fxFlex="90%" fxLayoutGap="16px"
+                style="min-width: 300px; min-height: 200px; background-color: rgb(175, 206, 240);">
+                <mat-card-header>
+                    <mat-card-title-group>
+                        <mat-card-title>Doctor Name: {{ patient.docName }}<br>
+                            Disease:{{patient.Disease}}<br>
+                            Email:{{patient.docEmail}}
+                        </mat-card-title>
+
+                    </mat-card-title-group>
+                </mat-card-header>
+                <mat-card-content>
+                    <P>
+                        Patient Name:{{patient.patientName}} <br>
+                        Patient Email:{{patient.patientEmail}}
+
+                    </P>
+                    <h2 style="color: green;">Appointment scheduled Successfully</h2>
+                </mat-card-content>
+
+            </mat-card>
+
+        </mat-grid-tile>
+
+    </mat-grid-list>
+</div>
