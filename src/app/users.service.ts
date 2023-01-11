@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { doc, Firestore } from '@angular/fire/firestore';
 import { setDoc, updateDoc } from 'firebase/firestore';
 import { from, Observable, of, switchMap } from 'rxjs';
-import { DoctorProfileForm , EmployeeForm, PatientForm} from './model';
+import { Appointment, DoctorData, DoctorProfileForm , EmployeeForm, PatientData, PatientForm} from './model';
 import { AuthService } from './auth.service';
 import { HttpClient } from '@angular/common/http';
+import { EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -46,8 +47,32 @@ export class UsersService {
     console.log(savedr);
     return this.http.post<any>(this.url+"/doctor",savedr)
   }
+  GetAllDoctorData(): Observable<DoctorData[]> {
+    return this.http.get<DoctorData[]>(this.url + "/doctor");
+  }
+  GetAllPatientData(): Observable<PatientData[]> {
+    return this.http.get<PatientData[]>(this.url + "/patient");
+  }
+  GetPatientDataById(id: number): Observable<PatientData> {
+    return this.http.get<PatientData>(this.url + "/patient/" + id);
+  }
+  GetAllAppointmet(): Observable<Appointment[]> {
+    return this.http.get<Appointment[]>(this.url + "/patientAppoint");
+  }
+  GetAllAppointmetByEmail(patientEmail: string): Observable<Appointment[]> {
+    return this.http.get<Appointment[]>(this.url + "/patientAppoint");
+  }
+  SaveAppointmentDetails(save: any) {
+    console.log(save)
+    return this.http.post<any>(this.url + "/patientAppoint", save)
+  }
+  event = new EventEmitter<DoctorData>();
+  setEvent(setDoc: DoctorData) {
+    this.event.emit(setDoc);
+    sessionStorage.setItem('doctorEmail', setDoc.docEmail);
+    sessionStorage.setItem('doctorName', setDoc.docName);
 
- 
+  } 
 
   // addUser(user : DoctorForm) :Observable<any>{
   //   const ref = doc(this.firestore,'users', user.docEmail)

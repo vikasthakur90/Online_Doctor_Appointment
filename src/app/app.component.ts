@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'OnlineDoctorAppointment';
   email = localStorage.getItem('email');
+ 
+  constructor(){
+    console.log(this.email);
+  }
 }

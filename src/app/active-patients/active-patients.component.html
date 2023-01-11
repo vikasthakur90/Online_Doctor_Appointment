@@ -46,7 +46,7 @@
 
       <ng-container matColumnDef="report">
         <th mat-header-cell *matHeaderCellDef> Patient Report</th>
-        <td mat-cell *matCellDef="let element"><button routerLink="register" mat-raised-button color="primary">Patient Report</button></td>
+        <td mat-cell *matCellDef="let element"><button routerLink="register" mat-raised-button color="primary" (click)="report(element)" >Patient Report</button></td>
       </ng-container>
 
      

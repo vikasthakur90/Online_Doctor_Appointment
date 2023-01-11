@@ -60,12 +60,12 @@ export class PatientReportComponent implements OnInit {
    note(){
     const dialogRef = this.dialog.open(Note,{
       data: {patientEmail: this.patient.patientEmail},
-    },);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.note1 = result;
     });
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log('The dialog was closed');
+    //   this.note1 = result;
+    // });
   }
    
   checked(){
@@ -103,7 +103,7 @@ export class PatientReportComponent implements OnInit {
   export class Note {
     constructor(
       public dialogRef: MatDialogRef<Note>,
-      @Inject(MAT_DIALOG_DATA) public data: DialogData,private http:HttpClient
+      @Inject(MAT_DIALOG_DATA) public data: DialogData,private http:HttpClient,private dialog:MatDialog
     ) {}
    note1!:NoteData;
     onNoClick(): void {
@@ -113,7 +113,14 @@ export class PatientReportComponent implements OnInit {
     
     submit(){
       this.note1.patientEmail=this.data.patientEmail;
-      this.http.post<NoteData>("http://localhost:3000/note",this.note1).subscribe();
+      console.log(this.note1);
+      this.PostNote(this.note1).subscribe();
     }
-   
+   PostNote(note:NoteData){
+    
+    return this.http.post<NoteData>("http://localhost:3000/note",note)
+   }
+   dclose(){
+    this.dialog.closeAll();
+  }
   }

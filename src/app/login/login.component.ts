@@ -37,8 +37,11 @@ hide=true;
       alert('Please Enter Password');
       return;
     }
+    if(this.email == 'Admin@yash.com' && this.password == 'Admin@123'){
+      this.router.navigate(['admin/admin-dashboard']);
+    }
 else{
-    this.auth.login(this.email, this.password);
+    this.auth.PatientLogin(this.email, this.password);
     this.email = '';
     this.password = '';
   }

@@ -62,6 +62,20 @@
       "patientImage": "https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg"
     }
   ],
+  "patientHistory": [
+    {
+      "id": 1,
+      "patientName": "Swagat",
+      "patientEmail": "swiggy.90900@gmail.com",
+      "patientPhone": "1234567890",
+      "patientAddress": "Indore",
+      "patientDob": "1/01/2000",
+      "patientGender": "M",
+      "patientAge": 23,
+      "patientImage": "https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg",
+      "docEmail": "vikasthaku.90900@gmail.com"
+    }
+  ],
   "patient": [
     {
       "id": 1,
@@ -84,10 +98,61 @@
       "patientGender": "M",
       "patientAge": 23,
       "patientImage": "https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg"
+    },
+    {
+      "id": 3,
+      "patientName": "Aditya",
+      "LastName": "as",
+      "patientEmail": "Aditya@yash.com",
+      "password": "Aditya@123",
+      "patientGender": "M",
+      "patientDob": "2002-07-03T18:30:00.000Z",
+      "patientPhone": "9097772323",
+      "patientAge": "22",
+      "patientAddress": "Dewas",
+      "patientImage": "C:\\fakepath\\Screenshot (26).png"
     }
   ],
   "prescription": [],
-  "note":[],
+  "note": [],
+  "patientAppoint": [
+    {
+      "patientName": "aditti",
+      "patientEmail": "aditi435jain@gmail.com",
+      "doa": "2023-01-10T18:30:00.000Z",
+      "Disease": "aaaaaaaaa",
+      "docName": "",
+      "docEmail": "",
+      "id": 1
+    },
+    {
+      "patientName": "aditi",
+      "patientEmail": "aaa@gmail.com",
+      "doa": "2023-01-18T18:30:00.000Z",
+      "Disease": "fever",
+      "docName": "Vikas Thakur",
+      "docEmail": "vikasthakur.90900@gmail.com",
+      "id": 2
+    },
+    {
+      "patientName": "Aditi Jain",
+      "patientEmail": "aaa@gmail.com",
+      "doa": "2023-01-18T18:30:00.000Z",
+      "Disease": "fever",
+      "docName": "aditii",
+      "docEmail": "aaaa@gmail.com",
+      "id": 3
+    },
+    {
+      "patientName": "Aditya",
+      "patientEmail": "Aditya@yash.com",
+      "doa": "2023-01-11T18:30:00.000Z",
+      "Disease": "Cough",
+      "docName": "Vikas Thakur",
+      "docEmail": "vikasthaku.90900@gmail.com",
+      "id": 4
+    }
+  ],
   "profile": {
     "name": "typicode"
   }
