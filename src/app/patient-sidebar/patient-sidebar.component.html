@@ -1,20 +1,23 @@
 <mat-nav-list>
     <div class="profile-card">
-        <div class="header">
-            <h2>{{this.name}}</h2>
+        <div class="header center">
+            <h2>{{this.name|titlecase}}</h2>
             <h4>{{this.loggedinuseremail}}</h4>
         </div>
-        <img src="{{this.image}}" alt="Soufiane FADIL">
+        <div class="profile">
+            <img class="profile-photo" src="{{this.image}}" alt="Soufiane FADIL">
+        </div>
     </div>
 
     <mat-divider></mat-divider>
 
-    <h2 matSubheader>Pages</h2>
+    <h2 class="header left" matSubheader>Pages</h2>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="patient-profile">profile</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="patient-profile">Profile</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="patient-appointment-history">Appointments
         History</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="bookappointment">Book Appointment</a>
+    <a mat-list-item routerLinkActive="list-item-active" (click)="logout()">Logout</a>
 
     <mat-divider></mat-divider>
 

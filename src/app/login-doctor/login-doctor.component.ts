@@ -22,8 +22,8 @@ export class LoginDoctorComponent implements OnInit{
   constructor(private auth : AuthService, private router :Router){}
   hide=true;
 
-email = localStorage.getItem('email');
-password = localStorage.getItem('password');
+email = sessionStorage.getItem('email');
+password = sessionStorage.getItem('password');
   ngOnInit(): void {
 if(this.email != null && this.password != null){
   this.auth.logindr(this.email,this.password);
@@ -42,8 +42,7 @@ if(this.email != null && this.password != null){
      }
  else{
      this.auth.logindr(this.docEmail, this.docPassword);
-     this.docEmail= '';
-     this.docPassword = '';
+
    }
    }
   

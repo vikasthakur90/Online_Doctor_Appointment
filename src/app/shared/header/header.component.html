@@ -1,40 +1,20 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <button mat-icon-button (click)="toggleSideBar()">
-            <mat-icon>menu</mat-icon>
-        </button>
+<mat-toolbar color="primary" >
+    <button mat-icon-button (click)="toggleSideBar()">
+        <mat-icon>menu</mat-icon>
+    </button>
+ 
 
-        <span> Doctor Appointment </span>
-        <div class="nav navbar-right"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <a routerLink="">Home</a>&nbsp;&nbsp;
-       <a routerLink="bothcard">Register</a>&nbsp;&nbsp;
-       <a routerLink="login">Login</a>&nbsp;&nbsp;
-       <a>About</a>
-        <!-- <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
-            <ul fxLayout="row" fxLayoutGap="20px">
-                <li>
-                    <button mat-icon-button>
-                        <mat-icon>settings</mat-icon>
-                    </button>
-                </li>
-                <li>
-                    <button mat-icon-button>
-                        <mat-icon></mat-icon>
-                    </button>
-                </li>
-                <li>
-                    <button mat-button [matMenuTriggerFor]="menu">
-                        <mat-icon>person_outline</mat-icon>
-                    </button>
-                    <mat-menu #menu="matMenu">
-                        <button mat-menu-item>
-                            <mat-icon>exit_to_app</mat-icon>
-                            Sign out
-                        </button>
-                    </mat-menu>
+     <span style="padding-left: 30px;">Online Doctor Appointement</span>
 
-                </li>
-            </ul>
-        </div> -->
-    </mat-toolbar-row>
+    <div style="float:right;padding-left: 400px;">
+
+        <button mat-button routerLink=""><mat-icon>home</mat-icon>Home</button>
+
+      <button mat-button routerLink="/about"><mat-icon>question_answer</mat-icon>About Us</button>
+
+      <button mat-button routerLink="/bothcard" *ngIf="this.email == undefined"><mat-icon>person_add</mat-icon>Register</button>
+
+    <button mat-button routerLink="/bothcard" *ngIf="this.email == undefined"><mat-icon>login</mat-icon>Login</button></div>
+
 </mat-toolbar>
+

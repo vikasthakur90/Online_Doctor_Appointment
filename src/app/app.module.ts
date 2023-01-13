@@ -10,7 +10,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ActivePatientsComponent } from './active-patients/active-patients.component';
 import { AppointmentComponent } from './appointment/appointment.component';
-import { Note, PatientReportComponent } from './patient-report/patient-report.component';
+import { Note, PatientReportComponent, Prescription } from './patient-report/patient-report.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -43,6 +43,11 @@ import { PatientBookAppointmentComponent } from './patient-book-appointment/pati
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { PatientSidebarComponent } from './patient-sidebar/patient-sidebar.component';
 import { AppointmentBookFormComponent } from './appointment-book-form/appointment-book-form.component';
+import { BillingComponent } from './billing/billing.component';
+import { PayComponent } from './pay/pay.component';
+import { AboutComponent } from './about/about.component';
+import { DoctorEditComponent } from './doctor-edit/doctor-edit.component';
+import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard.component';
 
 
 
@@ -60,9 +65,9 @@ import { AppointmentBookFormComponent } from './appointment-book-form/appointmen
     FooterComponent,
     BothcardComponent,
     LoginComponent,
-    RegisterComponent,
-    LoginDoctorComponent,
-    DoctorProfileComponent,Note,AdminDashboardComponent,BillsComponent, DesignComponent, DoctorslistComponent,FeedbackComponent, PatientslistComponent,AdminComponent, PatientDashComponent, PatientAppointmentHistoryComponent, PatientBookAppointmentComponent, PatientProfileComponent, PatientSidebarComponent, AppointmentBookFormComponent
+    RegisterComponent,Prescription,
+    LoginDoctorComponent,PatientSidebarComponent,
+    DoctorProfileComponent,Note,AdminDashboardComponent,BillsComponent, DesignComponent, DoctorslistComponent,FeedbackComponent, PatientslistComponent,AdminComponent, PatientDashComponent, PatientAppointmentHistoryComponent, PatientBookAppointmentComponent, PatientProfileComponent, AppointmentBookFormComponent, BillingComponent, PayComponent, AboutComponent, DoctorEditComponent, PatientDashboardComponent
   ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule,NgbCarouselModule,NgApexchartsModule,FlexLayoutModule,

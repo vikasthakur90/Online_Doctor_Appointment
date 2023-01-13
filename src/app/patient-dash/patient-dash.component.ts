@@ -17,9 +17,13 @@ export class PatientDashComponent {
     });
 
   }
+  sideBarOpen = true;
   getId(u: DoctorData) {
     this.cs.setEvent(u);
     console.log(u);
 
+  }
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
   }
 }

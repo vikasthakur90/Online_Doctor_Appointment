@@ -1,0 +1,25 @@
+.center {
+    padding-left: 20px;
+    text-align: center;
+}
+
+.left {
+    padding-left: 30px;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+}
+
+.profile {
+    text-align: center;
+}
+
+mat-nav-list {
+    width: 400px;
+}
+
+a {
+    padding-left: 35px;
+}

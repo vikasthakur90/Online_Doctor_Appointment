@@ -11,15 +11,25 @@ import { UsersService } from '../users.service';
 export class PatientAppointmentHistoryComponent {
 
   appointments !: Appointment[];
-  constructor(private cs: UsersService) { }
+  constructor(private cs: UsersService) {
+    this.cs.GetAllAppointmet().subscribe(list => {
+      console.log(list);
+      let patientEmail = localStorage.getItem('patientEmail');
+      list = list.filter(lst => lst.patientEmail == patientEmail)
+      console.log(list);
+      this.appointments = list
+    });
+  }
 
   ngOnInit() {
-    this.cs.GetAllAppointmet().subscribe(list => {
 
-      this.appointments = list
-      console.log(this.appointments);
-    });
-
+    this.cs.GetAllPrescription().subscribe(prescription => {
+      let patientEmail = localStorage.getItem('patientEmail');
+      prescription = prescription.filter(lst => lst.patientEmail == patientEmail)
+      console.log(this.appointments)
+      console.log(prescription);
+      this.appointments = this.appointments.map((appointment, index) => { appointment.prescription = prescription[index].medicine; return appointment })
+    })
   }
 }
    /* this.cs.GetAllAppointmetByEmail(loggeduser).subscribe();

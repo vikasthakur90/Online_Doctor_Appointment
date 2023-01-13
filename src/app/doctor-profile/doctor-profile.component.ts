@@ -18,7 +18,7 @@ export class DoctorProfileComponent implements OnInit {
     specialization:string='';
     docPhone: string ='';
     docAddress:string='';
-    docImage:string='';
+    docImage:string='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxXCQel_aODMeATFFpdaMDnJ1agzwT63pMsQ&usqp=CAU';
 
     constructor(private auth :AuthService, private users : UsersService, private fb: FormBuilder){}
     x:number=0;
@@ -37,7 +37,7 @@ export class DoctorProfileComponent implements OnInit {
        specialization:['',[Validators.required]],
        docPhone:['',[Validators.required,Validators.minLength(10),Validators.pattern("^[0-9]*$")]],
        docAddress:['',[Validators.required]],
-       docImage:['']
+       docImage:['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxXCQel_aODMeATFFpdaMDnJ1agzwT63pMsQ&usqp=CAU']
 
       })
      
@@ -72,8 +72,7 @@ this.users.Savedoctor(this.DoctorDetails.value).subscribe();
 
      this.auth.Doctorreg(this.docEmail,this.docPassword);
     
-     this.docEmail = '';
-     this.docPassword = '';
+   
    }
 
    upload(event:Event){

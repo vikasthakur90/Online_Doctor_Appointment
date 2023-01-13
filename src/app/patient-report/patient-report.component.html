@@ -26,7 +26,7 @@
     </mat-card-header>
     <mat-divider></mat-divider>
     <mat-card-content><br>
-      <h5>High Fever<br>Cough<br>Cold</h5>
+      <h5>{{patient.Disease}}</h5>
     </mat-card-content>
     <mat-card-actions><br>
       <button mat-raised-button color="primary" (click)="openDialog()">Give Prescription</button>
@@ -62,7 +62,7 @@
     <h3><b>Patient Gender: </b>{{patient.patientGender}}</h3>
     <mat-divider></mat-divider>
     <h3><b>Older Prescription</b></h3>
-    <p>No Availabe Prescription</p>
+    <p>{{prescription.medicine}}</p>
     <mat-divider></mat-divider>
     <h3><b>Note to Remember</b></h3>
     <p>No available Note</p>

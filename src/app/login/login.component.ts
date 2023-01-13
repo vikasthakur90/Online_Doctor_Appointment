@@ -42,8 +42,7 @@ hide=true;
     }
 else{
     this.auth.PatientLogin(this.email, this.password);
-    this.email = '';
-    this.password = '';
+    
   }
   }
   

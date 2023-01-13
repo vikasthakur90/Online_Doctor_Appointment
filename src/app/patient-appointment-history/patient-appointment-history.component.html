@@ -1,7 +1,39 @@
-<div>
-    <mat-grid-list cols="4" rowHeight="300px" gutterSize="10px">
-
-        <mat-grid-tile *ngFor="let patient of appointments ">
+<div class="background">
+    <div class="table">
+        <mat-grid-list cols="4" rowHeight="300px" gutterSize="10px">
+            <table class="rwd-table">
+                <tbody>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Doctor Name</th>
+                        <th>Date of Appointment</th>
+                        <th>Disease</th>
+                        <th>Prescription</th>
+                        <th>Bill</th>
+                    </tr>
+                    <tr *ngFor="let patient of appointments; let i = index">
+                        <td data-th="Supplier Code">
+                            {{i+1}}
+                        </td>
+                        <td data-th="Supplier Name">
+                            {{patient.docName}}
+                        </td>
+                        <td data-th="Invoice Number">
+                            {{patient.doa}}
+                        </td>
+                        <td data-th="Invoice Date">
+                            {{patient.Disease}}
+                        </td>
+                        <td data-th="Due Date">
+                            {{patient?.prescription}}
+                        </td>
+                        <td data-th="Net Amount">
+                            <button class="btn btn-success">paid</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <mat-grid-tile *ngFor="let patient of appointments ">
 
             <mat-card fxLayoutWrap="wrap" fxLayout="column" fxFlex="90%" fxLayoutGap="16px"
                 style="min-width: 300px; min-height: 200px; background-color: rgb(175, 206, 240);">
@@ -25,7 +57,8 @@
 
             </mat-card>
 
-        </mat-grid-tile>
+        </mat-grid-tile> -->
 
-    </mat-grid-list>
+        </mat-grid-list>
+    </div>
 </div>

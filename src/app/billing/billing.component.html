@@ -1,0 +1,263 @@
+<div class="container mt-2">
+
+</div>
+
+
+
+<div class="container mt-5 mb-3" id="pdfTable" #pdfTable>
+
+    <div class="row d-flex justify-content-center">
+
+
+
+        <div class="col-md-8">
+
+
+
+            <div class="card">
+
+
+
+             
+
+                <div style="background-color:darkblue;">
+
+                   
+
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU_0OcsaoVrjZg-w7BpoQ4FrktejOiE4M0mQ&usqp=CAU" alt="" style="height: 200px;width:175px ;">
+
+                   
+
+                    <div class="d-flex flex-column" style="float: right; padding:50px;color:white"  >
+
+                   
+
+                          <span class="font-weight-bold" style="font-size:20px;">Tax Invoice</span>
+
+                          <h3> <small>INV-001 </small>  <br> {{date2}}  <br>
+
+                        {{time1}} </h3>
+
+                     
+
+
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div>
+
+                    <table class="table table-borderless">
+
+                        <tbody>
+
+                            <tr class="add">
+
+                                <td> Bill To</td>
+
+                                <td style="float:right; padding-right: 300px;">From</td>
+
+                            </tr>
+
+                            <tr class="content">
+
+                                <td class="font-weight-bold"> <h4 style="font-weight: bold;">{{PatientName}}</h4> 22 year,Male</td>
+
+                                <td class="font-weight-bold" style="float:right; padding-right: 200px ;"> <h4 style="font-weight: bold;">{{DoctorName}}</h4> MBBS</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <hr>
+
+                <div>
+
+                   
+
+                    <table class="table table-borderless">
+
+                     
+
+                        <tbody>
+
+                         
+
+                            <tr class="add">
+
+                               
+
+                                <td>Description</td>
+
+                                <td>Fee</td>
+
+                               
+
+                                <td class="text-center">Total</td>
+
+                           
+
+                            </tr>
+
+                       
+
+                            <tr class="content">
+
+                                <td>Consultancy-fee</td>
+
+                                <td>{{ConsultancyFee}}</td>
+
+                             
+
+                                <td class="text-center">{{ConsultancyFee}}</td>
+
+                            </tr>
+
+                            <!-- <tr class="content">
+
+                                <td>Additional-charge</td>
+
+                                <td>1,000</td>
+
+                             
+
+                                <td class="text-center">900</td>
+
+                            </tr> -->
+
+                            <!-- <tr class="content">
+
+                                <td>CGST</td>
+
+                                <td>300</td>
+
+                               
+
+                                <td class="text-center">60</td>
+
+                            </tr> -->
+
+                        </tbody>
+
+                   
+
+                    </table>
+
+                </div>
+
+                <hr>
+
+                <div>
+
+                    <table class="table table-borderless">
+
+                        <tbody>
+
+                            <tr class="add">
+
+                                <td></td>
+
+                                <td>Subtotal</td>
+
+                                <td>GST</td>
+
+                                <td class="text-center">Total</td>
+
+                            </tr>
+
+                            <tr class="content">
+
+                                <td></td>
+
+                                <td>{{Subtotal}}</td>
+
+                                <td>{{Gst}}</td>
+
+                                <td class="text-center">{{Amount}}</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <hr>
+
+                <div class="address p-2">
+
+                    <table class="table table-borderless">
+
+                        <tbody>
+
+                            <tr class="add">
+
+                                <td>Bank Details</td>
+
+                            </tr>
+
+                            <tr class="content">
+
+                                <td> Bank Name : ADS BANK <br> Swift Code : 00220022 <br> Account Holder : Jassa Pepper
+
+                                    <br> Account Number : 6953PO789 <br>
+
+                                </td>
+
+                               
+
+                                <td>
+
+                                    <button mat-raised-button style="background-color: green;color: white;float: right;margin-right: 10%;"
+
+                                    (click)="pay(800)"> Pay Now</button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+
+
+                    </table>
+
+                   
+
+                       
+
+                   
+
+                   
+
+                </div>
+
+               
+
+               <br><br><br><br>
+
+                <div class="me">
+
+                    Download Invoice here
+
+                    <button mat-raised-button color="primary" class="btn btn-primary"
+
+                        (click)="makePDF()">Download</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

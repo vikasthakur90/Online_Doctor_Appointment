@@ -1,44 +1,85 @@
-<div>
-    <form [formGroup]="appointmentform" (ngSubmit)="onSubmit()">
+<div class="background">
+    <form [formGroup]="appointmentform" (ngSubmit)="onSubmit()" class="main">
         <div>
             <mat-form-field class="custom-form-field">
                 <mat-label>Name</mat-label>
+                <mat-icon matSuffix class="material-icon">account_circle</mat-icon>
                 <input matInput placeholder="enter name" formControlName="patientName" class="form-input-field">
-            </mat-form-field>
-        </div>
-        <div>
+            </mat-form-field>&nbsp;
+       
             <mat-form-field class="custom-form-field">
                 <mat-label>Email</mat-label>
+                <mat-icon matSuffix class="material-icon">email</mat-icon>
                 <input matInput placeholder="enter Email" formControlName="patientEmail" class=" form-input-field">
             </mat-form-field>
         </div>
         <div>
             <mat-form-field class="custom-form-field">
                 <mat-label>symptoms/Disease</mat-label>
+                <mat-icon matSuffix class="material-icon">medicine</mat-icon>
                 <input matInput placeholder="enter symptoms" formControlName="Disease" class="form-input-field">
-            </mat-form-field>
-        </div>
-        <div>
+            </mat-form-field>&nbsp;
+        
             <mat-form-field class="custom-form-field">
                 <mat-label>Doctor name</mat-label>
+                <mat-icon matSuffix class="material-icon">work</mat-icon>
                 <input matInput formControlName="docName" [(ngModel)]="doctorName" class="form-input-field" readonly />
             </mat-form-field>
         </div>
         <div>
             <mat-form-field class="custom-form-field">
                 <mat-label>Doctor Email</mat-label>
+                <mat-icon matSuffix class="material-icon">email</mat-icon>
                 <input matInput formControlName="docEmail" [(ngModel)]="doctorEmail" class="form-input-field" readonly>
-            </mat-form-field>
-        </div>
-        <div>
+            </mat-form-field>&nbsp;
+        
             <mat-form-field class="custom-form-field">
                 <mat-label>date for Appointment</mat-label>
                 <input matInput [matDatepicker]="picker" class="form-input-field" formControlName="doa">
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-        </div>
+        
+         
+           </div> 
+           <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Mobile No</mat-label>
+                <mat-icon matSuffix class="material-icon">phone</mat-icon>
+                <input matInput formControlName = "patientPhone" >
+                <mat-error *ngIf="appointmentform.controls['patientPhone'].invalid && appointmentform.controls['patientPhone'].hasError('required')">You must enter a Mobile No.</mat-error>
+            </mat-form-field>&nbsp;
+           
+                <mat-form-field appearance="fill" style="margin-right: 10px;">
+                    <mat-label>Age</mat-label>
+                    <mat-icon matSuffix class="material-icon"></mat-icon>
+                    <input matInput formControlName = "patientAge" >
+                    <mat-error *ngIf="appointmentform.controls['patientAge'].invalid && appointmentform.controls['patientAge'].hasError('required')">You must enter a Age</mat-error>
+                </mat-form-field>
+                </div>
+                <div style="width: 300px;margin-left: 140px;">
+                
+                <mat-form-field appearance="fill">
+                    <mat-label>Address</mat-label>
+                    <mat-icon matSuffix class="material-icon">location_on</mat-icon>
+                    <input matInput formControlName = "patientAddress" >
+                    <mat-error *ngIf="appointmentform.controls['patientAddress'].invalid && appointmentform.controls['patientAddress'].hasError('required')">You must enter your Address</mat-error>
+                </mat-form-field>
+            </div>
+            
+                <div style="width: 300px;margin-left: 150px;">
+                    <mat-radio-group aria-label="Select an option" formControlName = "patientGender" style="margin-left: 10px;" >
+                        <mat-label>Gender</mat-label>
+                       
+                        <mat-radio-button value="M">Male</mat-radio-button>
+                        <mat-icon matSuffix class="material-icon">male</mat-icon>
+                        <mat-radio-button value="F">Female</mat-radio-button>
+                        <mat-icon matSuffix class="material-icon">female</mat-icon>
+                        <mat-error *ngIf="appointmentform.controls['patientGender'].hasError('required') && appointmentform.controls['patientGender'].touched">You must enter a value</mat-error>
+                      </mat-radio-group>
+                     </div>
+                
 
-        <button mat-raised-button color="primary">Book</button>
+        <button style="margin-left: 200px;margin-top: 10px;" mat-raised-button color="primary">Book</button>
     </form>
 </div>

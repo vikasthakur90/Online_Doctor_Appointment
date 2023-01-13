@@ -20,12 +20,13 @@ export class PatientBookAppointmentComponent {
     this.cs.GetAllDoctorData().subscribe(list => {
 
       this.doctors = list
+
     });
 
   }
   getId(u: DoctorData) {
     this.cs.setEvent(u);
-    this.router.navigate(['appointment-form'])
+    this.router.navigate(['patient-dash/appointment-form'])
     console.log(u);
 
   }

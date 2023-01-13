@@ -1,122 +1,242 @@
+<app-header></app-header>
+<div class="step">
 
-<mat-progress-bar mode="determinate" [value]="x"></mat-progress-bar>
-<div class="step"><br><br>
-<div class="form">
-    <h1> Doctor Details </h1>
-<form [formGroup]="DoctorDetails">
-<mat-form-field appearance="fill" style="margin-right: 10px;">
-    <mat-label>DoctorName</mat-label>
-    <mat-icon matSuffix class="material-icon">people</mat-icon>
-    <input matInput placeholder="Enter DoctorName" formControlName = "docName" (input)="pro()" >
+    <div class="row">
     
-    <mat-error *ngIf="DoctorDetails.controls['docName'].invalid && DoctorDetails.controls['docName'].hasError('required')">Enter your Name</mat-error>
-</mat-form-field>
-
-
-    <mat-form-field appearance="fill">
-        <mat-label>Specialization</mat-label>
-        <mat-icon matSuffix class="material-icon">doctor</mat-icon>
-        <input matInput formControlName = "specialization" (input)="pro()" >
-        <mat-error *ngIf="DoctorDetails.controls['specialization'].invalid && DoctorDetails.controls['specialization'].hasError('required')">Enter Your Specialization </mat-error>
-    </mat-form-field> 
-
-
-
-<div class="example-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Enter your email</mat-label>
-      <mat-icon matSuffix class="material-icon">email</mat-icon>
-      <input matInput placeholder="pat@example.com" formControlName = "docEmail" required (input)="pro()" [(ngModel)]="docEmail">
-      <mat-error *ngIf="DoctorDetails.controls['docEmail'].invalid && DoctorDetails.controls['docEmail'].hasError('required')">You must enter a valid email</mat-error>
-    </mat-form-field>
- 
-  
-
-<mat-form-field appearance="fill">
-    <mat-label>Enter your password</mat-label>
-    <input matInput [type]="hide ? 'docPassword' : 'text'" formControlName = "docPassword" (input)="pro()" [(ngModel)]="docPassword">
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide docPassword'" [attr.aria-pressed]="hide">
-      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-    <mat-error *ngIf="DoctorDetails.controls['docPassword'].invalid && DoctorDetails.controls['docPassword'].hasError('required')"> Valid Password only Alphabet & numeric </mat-error>
-</mat-form-field>
-</div>
-
-
-<div>
-<mat-form-field appearance="fill" style="margin-right: 10px;">
-    <mat-label>Date of Birth</mat-label>
-    <input matInput [matDatepicker]="picker" formControlName = "docDob" (input)="pro()">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-    <mat-error *ngIf="DoctorDetails.controls['docDob'].invalid && DoctorDetails.controls['docDob'].hasError('required')">You must enter a value</mat-error>
-</mat-form-field>
-
-<mat-form-field appearance="fill">
-    <mat-label>Mobile No</mat-label>
-    <mat-icon matSuffix class="material-icon">phone</mat-icon>
-    <input matInput formControlName = "docPhone" (input)="pro()" >
-    <mat-error *ngIf="DoctorDetails.controls['docPhone'].invalid && DoctorDetails.controls['docPhone'].hasError('required')">You must enter a Mobile No.</mat-error>
-</mat-form-field>
-</div>
-
-<div>
-    <mat-form-field appearance="fill" style="margin-right: 10px;">
-        <mat-label>Address</mat-label>
-        <mat-icon matSuffix class="material-icon">address</mat-icon>
-        <input matInput formControlName = "docAddress" (input)="pro()" >
-        <mat-error *ngIf="DoctorDetails.controls['docAddress'].invalid && DoctorDetails.controls['docAddress'].hasError('required')">You must enter your Address</mat-error>
-    </mat-form-field>
-</div>
-
-<div >
- <div style="background-color: white;width: 300px; margin-left: 120px;">
-    <mat-radio-group aria-label="Select an option" formControlName = "docGender" style="margin-left: 10px;" (input)="pro()">
-        <mat-label>Gender</mat-label>
-        <mat-radio-button value="M">Male</mat-radio-button>
-        <mat-icon matSuffix class="material-icon">male</mat-icon>
-        <mat-radio-button value="F">Female</mat-radio-button>
-        <mat-icon matSuffix class="material-icon">female</mat-icon>
-        <mat-error *ngIf="DoctorDetails.controls['docGender'].hasError('required') && DoctorDetails.controls['docGender'].touched">You must enter a value</mat-error>
-      </mat-radio-group>
-     </div>
-</div>
-
- 
-<div (click)="uploadFile.click()" >
-
-    <button mat-raised-button color="primary">Choose File</button>
-    <input #uploadFile (change)="upload($event)" type='file' style="display:none" formControlName="docImage"/> 
- </div>
-
-<!-- <div>
-    <mat-form-field>
-        <label class="image-upload-container btn btn-bwm">
-            <span>Select Image</span>
-            <input #imageInput
-                   type="file"
-                   accept="image/*"
-                   (change)="processFile(imageInput)">
-          </label>
-    </mat-form-field>
-</div> -->
-
-
-    <!-- <mat-form-field appearance="fill" style="margin-right: 10px;">
-        <mat-label>Upload Image</mat-label>
-        <mat-icon matSuffix class="material-icon">image</mat-icon>
-        <input matInput formControlName = "docImage" (input)="pro()" >
-        <mat-error *ngIf="DoctorDetails.controls['Age'].invalid && DoctorDetails.controls['docImage'].hasError('required')">Upload Your Photo</mat-error>
-    </mat-form-field>
-     -->
-
-  <button mat-raised-button color="primary" style="margin-top: 20px;" (click)="DoctorRegister()">Submit</button><br>
-<div>
-    <a href="/login" style="font-size: 20px;">Already Have An Account</a>
-</div>
-  
-
-
-</form>
-</div></div>
+        <div class="column">
+    
+            <!-- <img  style="height: 560px; margin-left: 275px; border-radius: 25px;" src="assets/pageph.png"> -->
+    
+        </div>
+    
+        <div class="column">
+    
+            <mat-card class="block" style="width: 540px; margin-left: 40px; margin-bottom: 400px;">
+    
+                <div class="form">
+    
+                <h1 style="font-weight: bolder;"> Doctor Details </h1>
+    
+            <form [formGroup]="DoctorDetails">
+    
+            <mat-form-field appearance="fill" style="margin-right: 10px;">
+    
+                <mat-label>DoctorName</mat-label>
+    
+                <mat-icon matSuffix class="material-icon">people</mat-icon>
+    
+                <input matInput placeholder="Enter DoctorName" formControlName = "docName" (input)="pro()" >
+    
+               
+    
+                <mat-error *ngIf="DoctorDetails.controls['docName'].invalid && DoctorDetails.controls['docName'].hasError('required')">Enter your Name</mat-error>
+    
+            </mat-form-field>
+    
+           
+    
+           
+    
+                <mat-form-field appearance="fill">
+    
+                    <mat-label>Specialization</mat-label>
+    
+                    <mat-select formControlName = "specialization">
+    
+                        <mat-option value="Dermatologist">Dermatologist</mat-option>
+    
+                        <mat-option value="Ent">ENT</mat-option>
+    
+                        <mat-option value="Cardiologist">Cardiologist</mat-option>
+    
+                        <mat-option value="Neurosurgeon">Neurosurgeon</mat-option>
+    
+                        <mat-option value="Physiotherapist">Physiotherapist</mat-option>
+    
+                        <mat-option value="Psychiatrist">Psychiatrist</mat-option>
+    
+                        <mat-option value="Gynecologist">Gynecologist</mat-option>
+    
+                        <mat-option value="Onacologist">Onacologist</mat-option>
+    
+                        <mat-option value="Opthalmologist">Opthalmologist</mat-option>
+    
+                        <mat-option value="Orthopedician">Orthopedician</mat-option>
+    
+                        <mat-option value="Urologist">Urologist</mat-option>
+    
+                     
+    
+                    </mat-select>
+    
+                    <!-- <input matInput formControlName = "specialization" > -->
+    
+                    <mat-error *ngIf="DoctorDetails.controls['specialization'].invalid && DoctorDetails.controls['specialization'].hasError('required')">Enter Your Specialization </mat-error>
+    
+                </mat-form-field>
+    
+               
+    
+           
+    
+           
+    
+            <div class="example-container">
+    
+                <mat-form-field appearance="fill">
+    
+                  <mat-label>Enter your email</mat-label>
+    
+                  <mat-icon matSuffix class="material-icon">email</mat-icon>
+    
+                  <input matInput placeholder="pat@example.com" formControlName = "docEmail" required (input)="pro()" [(ngModel)]="docEmail">
+    
+                  <mat-error *ngIf="DoctorDetails.controls['docEmail'].invalid && DoctorDetails.controls['docEmail'].hasError('required')">You must enter a valid email</mat-error>
+    
+                </mat-form-field>
+    
+             
+    
+             
+    
+           
+    
+            <mat-form-field appearance="fill">
+    
+                <mat-label>Enter your password</mat-label>
+    
+                <input matInput [type]="hide ? 'docPassword' : 'text'" formControlName = "docPassword" (input)="pro()" [(ngModel)]="docPassword">
+    
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide docPassword'" [attr.aria-pressed]="hide">
+    
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    
+                </button>
+    
+                <mat-error *ngIf="DoctorDetails.controls['docPassword'].invalid && DoctorDetails.controls['docPassword'].hasError('required')"> Valid Password only Alphabet & numeric </mat-error>
+    
+            </mat-form-field>
+    
+            </div>
+    
+           
+    
+           
+    
+            <div>
+    
+            <mat-form-field appearance="fill" style="margin-right: 10px;">
+    
+                <mat-label>Date of Birth</mat-label>
+    
+                <input matInput [matDatepicker]="picker" formControlName = "docDob" (input)="pro()">
+    
+                <mat-hint>MM/DD/YYYY</mat-hint>
+    
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    
+                <mat-datepicker #picker></mat-datepicker>
+    
+                <mat-error *ngIf="DoctorDetails.controls['docDob'].invalid && DoctorDetails.controls['docDob'].hasError('required')">You must enter a value</mat-error>
+    
+            </mat-form-field>
+    
+           
+    
+            <mat-form-field appearance="fill">
+    
+                <mat-label>Mobile No</mat-label>
+    
+                <mat-icon matSuffix class="material-icon">phone</mat-icon>
+    
+                <input matInput formControlName = "docPhone" (input)="pro()" >
+    
+                <mat-error *ngIf="DoctorDetails.controls['docPhone'].invalid && DoctorDetails.controls['docPhone'].hasError('required')">You must enter a Mobile No.</mat-error>
+    
+            </mat-form-field>
+    
+            </div>
+    
+           
+    
+            <div>
+    
+                <mat-form-field appearance="fill" style="margin-right: 10px;">
+    
+                    <mat-label>Address</mat-label>
+    
+                    <mat-icon matSuffix class="material-icon">location_on</mat-icon>
+    
+                    <input matInput formControlName = "docAddress" (input)="pro()" >
+    
+                    <mat-error *ngIf="DoctorDetails.controls['docAddress'].invalid && DoctorDetails.controls['docAddress'].hasError('required')">You must enter your Address</mat-error>
+    
+                </mat-form-field>
+    
+            </div>
+    
+           
+    
+            <div >
+    
+             <div style="background-color: white;width: 300px; margin-left: 120px;">
+    
+                <mat-radio-group aria-label="Select an option" formControlName = "docGender" style="margin-left: 10px;" (input)="pro()">
+    
+                    <mat-label>Gender</mat-label>
+    
+                    <mat-radio-button value="M">Male</mat-radio-button>
+    
+                    <mat-icon matSuffix class="material-icon">male</mat-icon>
+    
+                    <mat-radio-button value="F">Female</mat-radio-button>
+    
+                    <mat-icon matSuffix class="material-icon">female</mat-icon>
+    
+                    <mat-error *ngIf="DoctorDetails.controls['docGender'].hasError('required') && DoctorDetails.controls['docGender'].touched">You must enter a value</mat-error>
+    
+                  </mat-radio-group>
+    
+                 </div>
+    
+            </div><br>
+    
+           
+    
+            <!-- <div (click)="uploadFile.click()" >
+    
+           
+    
+                <button mat-raised-button color="primary">Upload Profile image</button>
+    
+                <input #uploadFile (change)="upload($event)" type='file' style="display:none" formControlName="docImage"/>
+    
+           
+    
+             </div> -->
+    
+            <button mat-raised-button color="primary" style="margin-top: 5px; margin-left: 30px; align-items: center;" (click)="DoctorRegister()">Submit</button>
+    
+            <br>
+    
+                <a href="/login-doctor" style="font-size: 15px; margin-left: 50px; color: yellow; font-weight: bold;">Already Have An Account</a>
+    
+    
+    
+           
+    
+             
+    
+           
+    
+           
+    
+            </form>
+    
+            </div></mat-card>
+    
+        </div>
+    
+      </div>
+    
+    </div>

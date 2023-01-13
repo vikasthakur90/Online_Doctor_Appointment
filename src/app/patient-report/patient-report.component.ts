@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component,Inject,OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AppointmentComponent } from '../appointment/appointment.component';
-import { pappointment, PatientData, prescription } from '../model';
+import { Appointment, pappointment, PatientData, prescription } from '../model';
 import { ServiceService } from '../service.service';
 
 export interface DialogData {
@@ -24,7 +24,7 @@ export interface NoteData {
 
 export class PatientReportComponent implements OnInit {
   patientName!:string;
-  patient:pappointment={
+  patient:Appointment={
     id: 0,
     doa: '',
     patientName: '',
@@ -33,10 +33,14 @@ export class PatientReportComponent implements OnInit {
     patientAddress: '',
     patientDob: '',
     patientGender: '',
-    patientAge: 0,
-    patientImage: ''
+    patientAge: '',
+    patientImage: '',
+    Disease: '',
+    docEmail: '',
+    docName: ''
   }; 
-
+list:prescription[];
+prescription!:prescription;
   constructor(private http:HttpClient,private cs:ServiceService,public dialog: MatDialog,private route:ActivatedRoute){ }
   
   ngOnInit(): void {
@@ -45,16 +49,29 @@ export class PatientReportComponent implements OnInit {
       this.patient=re;
    console.log(this.patient);
   });
+
+  this.cs.getPrescription(this.patient.patientEmail).subscribe(list=>{
+    this.list = list.filter((a:any)=>{
+     return a.patientEmail === this.patient.patientEmail;
+    });
+    this.prescription = this.list[0];
+  })
+  
+  
   }
 
   
   openDialog() {
     
-    this.dialog.open(Prescription,{
+    // this.dialog.open(Prescription,{
+    //   height:'450px',
+    //   width:'500px'
+    // });
+    const dialogRef = this.dialog.open(Prescription,{
+      data: {patientEmail: this.patient.patientEmail},
       height:'450px',
       width:'500px'
-    });
-
+    },);
    }
    note1!:string;
    note(){
@@ -82,13 +99,25 @@ export class PatientReportComponent implements OnInit {
   
   export class Prescription {
   
-    constructor(public dialog: MatDialog,private http:HttpClient,public dialogRef: MatDialogRef<Note>) {}
+    constructor(
+      public dialogRef: MatDialogRef<Note>,
+      @Inject(MAT_DIALOG_DATA) public data: DialogData,private http:HttpClient,private dialog:MatDialog
+    ) {}
     dclose(){
       this.dialog.closeAll();
     }
-    prescription!:prescription;
-    savePrescription(){
-     this.http.post("http://localhost:3000/prescription",this.prescription);
+  
+
+    prescription:prescription={
+      
+      medicine: '',
+      test: '',
+      additional: '',
+      patientEmail: this.data.patientEmail,
+      };
+    savePrescription(prescription:prescription){
+      console.log(this.prescription);
+   return this.http.post<prescription>("http://localhost:3000/prescription",this.prescription).subscribe();
     }
   }
   

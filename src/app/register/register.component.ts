@@ -43,7 +43,7 @@ constructor(private fb:FormBuilder, private auth : AuthService, private userserv
       patientPhone : ['',[Validators.required,Validators.minLength(10)]],
       patientAge:['',[Validators.required]],
       patientAddress:['',[Validators.required]],
-      patientImage:['']
+      patientImage:['https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg']
       
     })
   }
@@ -83,8 +83,7 @@ this.userservice.Saveuser(this.empForm.value).subscribe()
 
     this.auth.register(this. patientEmail,this.password);
     
-    this.patientEmail = '';
-    this.password = '';
+   
 
   }
 

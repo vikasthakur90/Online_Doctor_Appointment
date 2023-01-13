@@ -1,38 +1,130 @@
 
-
 .example-container mat-form-field + mat-form-field {
-    margin-left: 8px;
-  }
-  /* .step{
-    background-image: url(https://img.freepik.com/free-vector/realistic-galaxy-background_52683-12122.jpg?w=2000);
-    height: 550px;
-    background-size: cover; }*/
 
-
-  .example-right-align {
-    text-align: right;
-  }
-  
-  input.example-right-align::-webkit-outer-spin-button,
-  input.example-right-align::-webkit-inner-spin-button {
-    display: none;
-  }
-  
-.form{
-    text-align: center;
-    border-radius: 2px;
-  margin-top: 5px;
-    background-color: #ffffff;
-    width: 510px;
-    height: 480px;
-    margin-left: 320px;
-   
-   
+  margin-left: 8px;
 
 }
+
+
+
+.example-right-align {
+
+  text-align: right;
+
+}
+
+
+
+input.example-right-align::-webkit-outer-spin-button,
+
+input.example-right-align::-webkit-inner-spin-button {
+
+  display: none;
+
+}
+
+
+
+.form{
+
+  text-align: center;
+
+  border-radius: 2px;
+
+margin-top: 0px;
+
+  background-color: #ffffff51;
+
+  width: 540px;
+
+  height: 560px;
+
+  margin-left: 0px;
+
+ z-index: 2;
+
+ border-radius: 25px;
+
+ 
+
+ 
+
+
+
+}
+
 .step{
-	background-image: url("https://t4.ftcdn.net/jpg/00/64/27/09/360_F_64270970_4LMrGzx6DuMDse9fKaMxNRKSUJRSkCnf.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	padding: 25px;
+
+background-image: url("https://cdn.mos.cms.futurecdn.net/dvNfjRyADTRpsvbSXmyDAj.jpg");
+
+background-size: cover;
+
+background-repeat: no-repeat;
+
+padding: 25px;
+
+overflow: hidden;
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+mat-card{
+
+
+
+border: solid rgb(239, 239, 9);
+
+border-radius: 2em;
+
+box-shadow: 5px 5px;
+
+background-color: rgba(22, 137, 186, 0.322);
+
+-webkit-box-shadow: 0px 0px 15px 5px rgba(190, 242, 255, 0.75);
+
+-moz-box-shadow: 0px 0px 15px 5px rgba(190, 242, 255, 0.75);
+
+box-shadow: 0px 0px 15px 5px rgba(190, 242, 255, 0.75);
+
+}
+
+.block:hover{
+
+height: 565px;
+
+width: 58%;
+
+
+
+}
+
+
+
+
+
+
+
+.column {
+
+float: left;
+
+width: 50%;
+
+padding: 10px;
+
+height: 600px;
+
 }

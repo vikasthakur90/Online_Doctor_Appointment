@@ -1,0 +1,35 @@
+.float-left {
+    float: left;
+    display: flex;
+}
+
+.float-left-padding {
+    margin-left: 300px
+}
+
+.main {
+    padding-top: 5%;
+    padding-left: 550px;
+}
+
+.background {
+    background-image: url(../../assets/layered-waves-haikei.svg);
+    background-color: #fae1dd;
+    background-size: cover;
+    height: 91vh;
+    overflow-y: clip;
+}
+
+.BookButton {
+    padding: 25px;
+    font-size: 16px;
+}
+
+.appointment-heading {
+    font-size: 3rem;
+    color: #1d3557;
+    text-align: center;
+    padding-top: 3%;
+    font-weight: strong;
+    font-family: 'Times New Roman', Times, serif;
+}
