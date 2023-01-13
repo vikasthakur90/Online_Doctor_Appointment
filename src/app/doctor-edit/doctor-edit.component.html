@@ -1,0 +1,106 @@
+<div class="step"><br><br>
+    <div class="form">
+        <h1> Doctor Details </h1>
+    <form [formGroup]="DoctorDetails">
+        
+    <mat-form-field appearance="fill" style="margin-right: 10px;">
+        <mat-label>DoctorName</mat-label>
+        <mat-icon matSuffix class="material-icon">people</mat-icon>
+        <input matInput formControlName = "docName">
+        
+        
+    </mat-form-field>
+    
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Specialization</mat-label>
+            <mat-icon matSuffix class="material-icon">doctor</mat-icon>
+            <input matInput formControlName = "specialization"  >
+            <mat-error *ngIf="DoctorDetails.controls['specialization'].invalid && DoctorDetails.controls['specialization'].hasError('required')">Enter Your Specialization </mat-error>
+        </mat-form-field> 
+    
+    
+    
+    <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your email</mat-label>
+          <mat-icon matSuffix class="material-icon">email</mat-icon>
+          <input type="text" matInput placeholder="pat@example.com" formControlName = "docEmail" >
+          
+        </mat-form-field>
+     
+      
+    
+   
+    </div>
+    
+    
+    <div>
+    <mat-form-field appearance="fill" style="margin-right: 10px;">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName = "docDob">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="DoctorDetails.controls['docDob'].invalid && DoctorDetails.controls['docDob'].hasError('required')">You must enter a value</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Mobile No</mat-label>
+        <mat-icon matSuffix class="material-icon">phone</mat-icon>
+        <input matInput formControlName = "docPhone" >
+        <mat-error *ngIf="DoctorDetails.controls['docPhone'].invalid && DoctorDetails.controls['docPhone'].hasError('required')">You must enter a Mobile No.</mat-error>
+    </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field appearance="fill" style="margin-right: 10px;">
+            <mat-label>Address</mat-label>
+            <mat-icon matSuffix class="material-icon">address</mat-icon>
+            <input matInput formControlName = "docAddress"  >
+            <mat-error *ngIf="DoctorDetails.controls['docAddress'].invalid && DoctorDetails.controls['docAddress'].hasError('required')">You must enter your Address</mat-error>
+        </mat-form-field>
+    </div>
+    
+    <div >
+     <div style="background-color: white;width: 300px; margin-left: 120px;">
+        <mat-radio-group aria-label="Select an option" formControlName = "docGender" style="margin-left: 10px;">
+            <mat-label>Gender</mat-label>
+            <mat-radio-button value="M">Male</mat-radio-button>
+            <mat-icon matSuffix class="material-icon">male</mat-icon>
+            <mat-radio-button value="F">Female</mat-radio-button>
+            <mat-icon matSuffix class="material-icon">female</mat-icon>
+            <mat-error *ngIf="DoctorDetails.controls['docGender'].hasError('required') && DoctorDetails.controls['docGender'].touched">You must enter a value</mat-error>
+          </mat-radio-group>
+         </div>
+    </div>
+    
+     
+    <!-- <div (click)="uploadFile.click()" >
+    
+        <button mat-raised-button color="primary">Choose Profile Image</button>
+        <input #uploadFile (change)="upload($event)" type='file' style="display:none" formControlName="docImage"/> 
+     </div>
+     -->
+    <!-- <div>
+        <mat-form-field>
+            <label class="image-upload-container btn btn-bwm">
+                <span>Select Image</span>
+                <input #imageInput
+                       type="file"
+                       accept="image/*"
+                       (change)="processFile(imageInput)">
+              </label>
+        </mat-form-field>
+    </div> -->
+    
+    
+        <!-- <mat-form-field appearance="fill" style="margin-right: 10px;">
+            <mat-label>Upload Image</mat-label>
+            <mat-icon matSuffix class="material-icon">image</mat-icon>
+            <input matInput formControlName = "docImage" (input)="pro()" >
+            <mat-error *ngIf="DoctorDetails.controls['Age'].invalid && DoctorDetails.controls['docImage'].hasError('required')">Upload Your Photo</mat-error>
+        </mat-form-field>
+         -->
+    
+      <button mat-raised-button color="primary" style="margin-top: 20px;" (click)="DoctorRegister()">Submit</button><br>

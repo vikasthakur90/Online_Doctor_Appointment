@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
-import { pappointment, PatientData } from '../model';
+import { Appointment, pappointment, PatientData } from '../model';
 import { DatePipe } from '@angular/common';
 import { ServiceService } from '../service.service';
 import { ActivePatientsComponent } from '../active-patients/active-patients.component';
@@ -19,27 +19,28 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class AppointmentComponent {
   currentDate = new Date().toLocaleDateString();
-  list:pappointment[] = [];
+  list:Appointment[] = [];
   url:string = "http://localhost:3000";
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   displayedColumns: string[] = ['doa', 'patientName', 'patientEmail', 'patientPhone', 'patientGender', 'patientAddress','patientAge', 'report'];
   dataSource:any;
   patient:PatientData[] = [];
+  docE = sessionStorage.getItem('email');
   constructor(private http:HttpClient,private cs:ServiceService,private router:Router,private matDialog:MatDialog){}
   ngOnInit():void{
     
     this.appointmentGet().subscribe(list=>{
       this.list = list.filter((a:any)=>{
-       return a.doa === this.currentDate;
+       return a.doa === this.currentDate && a.docEmail === this.docE;
       });
     
-      this.dataSource = new MatTableDataSource<pappointment>(this.list);
+      this.dataSource = new MatTableDataSource<Appointment>(this.list);
       this.dataSource.paginator=this.paginator;
       this.dataSource.sort=this.sort;
     })}
-  appointmentGet():Observable<pappointment[]>{
-    return this.http.get<pappointment[]>(this.url + "/appointment");
+  appointmentGet():Observable<Appointment[]>{
+    return this.http.get<Appointment[]>(this.url + "/patientAppoint");
   }
 
 

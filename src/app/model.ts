@@ -10,6 +10,8 @@ export interface DoctorData{
     docImage:string;
 }
 export interface Appointment {
+    
+   // [x: string]: string;
     id: number;
     doa: string;
     patientEmail: string;
@@ -17,6 +19,13 @@ export interface Appointment {
     Disease: string;
     docEmail: string;
     docName: string;
+    patientPhone:string;
+    patientAddress:string;
+    patientDob:string;
+    patientGender:string;
+    patientAge:string;
+    patientImage:string;
+    prescription?: string;
 }
 export interface PatientData{
     id:number;
@@ -29,6 +38,7 @@ export interface PatientData{
     patientGender:string;
     patientAge:number;
     patientImage:string;
+
 }
 export interface BillDetails{
     id:number;
@@ -48,10 +58,12 @@ export interface pappointment{
     patientImage:string;
 }
 export interface prescription{
-    id:number;
+    
+    
     medicine:string;
     test:string;
     additional:string;
+    patientEmail:string;
 }
 export class EmployeeForm{
     id:number; 

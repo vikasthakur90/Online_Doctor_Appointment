@@ -1,28 +1,36 @@
-<div>
-    <mat-grid-list cols="4" rowHeight="300px" gutterSize="10px">
+<div class="background p-5">
+    <mat-grid-list cols="4" rowHeight="500px" gutterSize="10px">
 
         <mat-grid-tile *ngFor="let doctor of doctors">
 
-            <mat-card fxLayoutWrap="wrap" fxLayout="column" fxFlex="90%" fxLayoutGap="16px"
-                style="min-width: 300px; min-height: 200px; background-color: rgb(175, 206, 240);">
-                <mat-card-header>
-                    <mat-card-title-group>
-                        <mat-card-subtitle>{{doctor.specialization}}</mat-card-subtitle>
-                        <mat-card-title>{{ doctor.docName }}</mat-card-title>
-                        <img style="height: 70px; width: 70px; border-radius: 50%;" src={{doctor.docImage}}>
-                    </mat-card-title-group>
-                </mat-card-header>
+            <mat-card class="doctor" style="height: 430px;width: 350px;" >
+                <img mat-card-image
+                    src="{{doctor.docImage}}"
+                    width="300px" height="200px">
+
                 <mat-card-content>
-                    <P>
-                        Email:{{doctor.docEmail}}<br>
-                        Mobile No:{{doctor.docPhone}}<br>
-                        Address:{{doctor.docAddress}}
-                    </P>
+                    <div class="DocSpec">
+                        <h4>
+                            {{doctor.docName}}<Br>
+                            <small>{{doctor.specialization}}</small>
+                        </h4>
+                    </div>
+                    <div class="patientData">
+                        <h4>
+                            Email: {{doctor.docEmail}}<br>
+                            Mobile No: {{doctor.docPhone}}<br>
+                            Address: {{doctor.docAddress}}
+                        </h4>
+                    </div>
+
                 </mat-card-content>
-                <mat-card-actions>
-                    <button mat-raised-button color="primary" (click)="getId(doctor)">Book
-                        Appointment</button>
-                </mat-card-actions>
+                <div class="cardButton">
+                    <mat-card-actions>
+                        <button mat-raised-button color="primary" (click)="getId(doctor)">Book
+                            Appointment</button>
+                    </mat-card-actions>
+                </div>
+
             </mat-card>
 
         </mat-grid-tile>

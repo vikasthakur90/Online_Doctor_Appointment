@@ -30,7 +30,9 @@ export class AuthService {
     this.fireauth.signInWithEmailAndPassword(email,password).then( () => {
       localStorage.setItem('token','true');
       localStorage.setItem('email',email);
-      localStorage.setItem('password',password);
+      sessionStorage.setItem('email',email);
+      
+      sessionStorage.setItem('password',password);
       this.router.navigate(['doctor-dash']);
 
     }, err => {
@@ -43,9 +45,10 @@ export class AuthService {
   PatientLogin(email: string, password: string) {
     this.fireauth.signInWithEmailAndPassword(email, password).then(() => {
       localStorage.setItem('token', 'true');
-      localStorage.setItem('patientEmail', email);
+      localStorage.setItem('patientEmail',email)
+      sessionStorage.setItem('patientEmail', email);
       sessionStorage.setItem('pemail', email);
-
+      sessionStorage.setItem('email',email);
       this.router.navigate(['/patient-dash']);
     }, err => {
       alert(err.message);
@@ -71,10 +74,16 @@ export class AuthService {
   //logout method
   logout(){
     this.fireauth.signOut().then( () => {
-      localStorage.removeItem('token');
+      sessionStorage.removeItem('token');
+      sessionStorage.removeItem('email');
+      sessionStorage.removeItem('password');
       localStorage.removeItem('email');
+      sessionStorage.removeItem('email');
+      localStorage.removeItem('patientEmail');
+      sessionStorage.removeItem('pemail')
+      sessionStorage.removeItem('patientEmail');
       console.log("logout");
-      this.router.navigate(['/login']);
+      this.router.navigate(['/bothcard']);
 
     }, err => {
       alert(err.message)
@@ -126,6 +135,8 @@ Doctorreg(docEmail : string, docPassword: string) {
 logindr(docEmail : string, docPassword : string){
   this.fireauth.signInWithEmailAndPassword(docEmail,docPassword).then( () => {
     localStorage.setItem('token','true');
+    localStorage.setItem('email',docEmail);
+    sessionStorage.setItem('email',docEmail);
     this.router.navigate(['doctor-dash']);
   }, err => {
     alert(err.message);

@@ -10,8 +10,11 @@ export class HeaderComponent {
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
-
-  ngOnInit() { }
+ email = sessionStorage.getItem('email');
+  ngOnInit() {
+    this.email = sessionStorage.getItem('email');
+    console.log(this.email)
+   }
 
   toggleSideBar() {
     this.toggleSideBarForMe.emit();

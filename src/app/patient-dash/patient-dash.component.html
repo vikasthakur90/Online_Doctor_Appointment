@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <mat-sidenav-container fullscreen>
         <mat-sidenav #sidenav>
             <app-patient-sidebar></app-patient-sidebar>
@@ -11,4 +11,17 @@
         </mat-toolbar>
         <router-outlet></router-outlet>
     </mat-sidenav-container>
-</div>
+</div> -->
+<app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <app-patient-sidebar></app-patient-sidebar>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+        <br>
+        
+    </mat-drawer-content>
+    
+</mat-drawer-container>

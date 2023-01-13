@@ -1,6 +1,9 @@
-<mat-toolbar color="primary">
-    <mat-icon matIcon>supervisor_account</mat-icon>
-    <span style="width:90%">Admin Dashboard</span>
+<mat-toolbar color="primary" style="position: absolute;">
+  <img style="width: 50px; height: 50px; border-radius: 50%"
+
+  src="https://th.bing.com/th/id/R.a97d5eded89645f845a6dd9d560d6acb?rik=eMa8z9%2bvy3aEfQ&riu=http%3a%2f%2fwww.thebubblebubble.com%2fwp-content%2fuploads%2f2011%2f05%2fHealthcare-Bubble3.jpg&ehk=ITEThJ2UuQwiy9GZLKBrwb%2f85WOMpKiS54mekk9hbmk%3d&risl=&pid=ImgRaw&r=0">
+    
+    <span style="width:90%; padding-left: 30px;">Admin Dashboard</span>
     <div style="text-align: right;">
       
       <button mat-button (click)="openDialog()"><mat-icon>feedback</mat-icon>Feedbacks</button>
@@ -11,9 +14,8 @@
     <mat-sidenav mode = "side" opened class="sidenav">
       <section>
          <h2>Admin </h2>
-         <span>admin123@email.com </span>
       </section>
-           <img src="https://image.shutterstock.com/image-vector/female-customer-service-icon-woman-260nw-426119812.jpg">
+           <img src="https://th.bing.com/th/id/OIP.x5uh9HguqB0rcf0zJbCFBAHaHa?pid=ImgDet&rs=1">
            
          <mat-divider></mat-divider>
          <div style="color:grey">Pages</div>
@@ -45,7 +47,7 @@
         <a href=""> Settings</a>
      </section>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content style="padding-left: 10px; padding-top: 10px;">
       <router-outlet></router-outlet>
     </mat-sidenav-content>
  </mat-sidenav-container>

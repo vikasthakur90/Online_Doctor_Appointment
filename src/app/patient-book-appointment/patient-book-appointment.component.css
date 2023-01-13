@@ -1,0 +1,37 @@
+.background {
+    background-image: url(../../assets/layered-waves-haikei.svg);
+    background-color: #a8dadc;
+    background-size: cover;
+    height: 91vh;
+    overflow-y: clip;
+}
+
+.doctor {
+    background-size: cover;
+    margin-right: 70px;
+    border-radius: 2%;
+}
+
+.DocSpec {
+    font-weight: strong;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.patientData {
+    font-weight: strong;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cardButton {
+    text-align: center;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}

@@ -1,9 +1,8 @@
 .tp-container {
     position: absolute;
-    top: 100px;
     bottom: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
+    height: 86%;
     background: #eee;
  }
  .tp-section {
@@ -15,11 +14,11 @@
     width:130px;   
  }
  .sidenav{
-    width:14%;
+    width:15%;
  }
 img{
-    width:150px;
-    height:100px;
+    width:90px;
+    height:70px;
     border-radius: 50%;
 }
 a{

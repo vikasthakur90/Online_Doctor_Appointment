@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { doc, Firestore } from '@angular/fire/firestore';
 import { setDoc, updateDoc } from 'firebase/firestore';
 import { from, Observable, of, switchMap } from 'rxjs';
-import { Appointment, DoctorData, DoctorProfileForm , EmployeeForm, PatientData, PatientForm} from './model';
+import { Appointment, DoctorData, DoctorProfileForm, EmployeeForm, PatientData, PatientForm, prescription } from './model';
 import { AuthService } from './auth.service';
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter } from '@angular/core';
@@ -13,7 +13,7 @@ import { EventEmitter } from '@angular/core';
 
 
 export class UsersService {
-  url:string = "http://localhost:3000";
+  url: string = "http://localhost:3000";
 
   // get currentUserProfile$(): Observable<DoctorForm | null>{
   //   return this.fireauth.currentUser$.pipe(
@@ -27,7 +27,7 @@ export class UsersService {
 
   // }
 
-  constructor(private http : HttpClient,private firestore: Firestore, private fireauth: AuthService ) { }
+  constructor(private http: HttpClient, private firestore: Firestore, private fireauth: AuthService) { }
   // Doctordata(Drdata : DoctorProfileForm){
   //   console.log(Drdata);
   //   return this.http.post<DoctorProfileForm>(this.url+"/Doctordata",Drdata);
@@ -38,14 +38,14 @@ export class UsersService {
   //   return this.http.post<PatientForm>(this.url+"/Patientdata",Pdata);
   // }
 
-  Saveuser(save: any){
+  Saveuser(save: any) {
     console.log(save);
-    return this.http.post<any>(this.url+"/patient",save);
+    return this.http.post<any>(this.url + "/patient", save);
   }
 
-  Savedoctor(savedr : any){
+  Savedoctor(savedr: any) {
     console.log(savedr);
-    return this.http.post<any>(this.url+"/doctor",savedr)
+    return this.http.post<any>(this.url + "/doctor", savedr)
   }
   GetAllDoctorData(): Observable<DoctorData[]> {
     return this.http.get<DoctorData[]>(this.url + "/doctor");
@@ -58,6 +58,9 @@ export class UsersService {
   }
   GetAllAppointmet(): Observable<Appointment[]> {
     return this.http.get<Appointment[]>(this.url + "/patientAppoint");
+  }
+  GetAllPrescription(): Observable<prescription[]> {
+    return this.http.get<prescription[]>(this.url + "/prescription");
   }
   GetAllAppointmetByEmail(patientEmail: string): Observable<Appointment[]> {
     return this.http.get<Appointment[]>(this.url + "/patientAppoint");
@@ -72,7 +75,7 @@ export class UsersService {
     sessionStorage.setItem('doctorEmail', setDoc.docEmail);
     sessionStorage.setItem('doctorName', setDoc.docName);
 
-  } 
+  }
 
   // addUser(user : DoctorForm) :Observable<any>{
   //   const ref = doc(this.firestore,'users', user.docEmail)

@@ -1,0 +1,18 @@
+.patient-profile {
+    width: 50%;
+    padding-top: 3%;
+    margin-left: 30%;
+    height: 89vh;
+}
+
+.patient-profile mat-form-field {
+    width: 78%
+}
+
+.patient-profile-background {
+    background-image: url(../../assets/layered-waves-haikei.svg);
+    background-color: #a8dadc;
+    background-size: cover;
+    height: 91vh;
+    overflow-y: clip;
+}

@@ -7,9 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'OnlineDoctorAppointment';
-  email = localStorage.getItem('email');
+  email = sessionStorage.getItem('email');
  
   constructor(){
+    this.email = sessionStorage.getItem('email');
     console.log(this.email);
   }
 }
