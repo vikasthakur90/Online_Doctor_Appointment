@@ -37,6 +37,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ![image](https://github.com/vikasthakur90/Online_Doctor_Appointment/assets/66615520/5db7412d-fc9c-4c78-9d07-666b0762a4c9)
 
+![image](https://github.com/vikasthakur90/Online_Doctor_Appointment/assets/66615520/aa4c9ac8-928c-44df-a31f-c99dbc9b13ca)
 
 
 
